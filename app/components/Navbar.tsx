@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 
-export default function Navbar({ lang, setLang }) {
+interface NavbarProps {
+    lang: string;
+    setLang: (value: string) => void;
+}
+
+export default function Navbar({ lang, setLang }: NavbarProps) {
     return (
         <nav className="w-full bg-white border-b border-gray-200 shadow-sm">
             <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -45,7 +50,9 @@ export default function Navbar({ lang, setLang }) {
                     {/* Country (Jordan Only for Now) */}
                     <button className="flex items-center gap-2 bg-white border px-4 py-2 rounded-full shadow-sm hover:bg-gray-50 transition">
                         <img src="/jordan.png" className="w-6 h-4 rounded-sm" />
-                        <span className="font-semibold">{lang === "ar" ? "الأردن" : "Jordan"}</span>
+                        <span className="font-semibold">
+                            {lang === "ar" ? "الأردن" : "Jordan"}
+                        </span>
                     </button>
 
                     {/* Login */}
