@@ -13,14 +13,14 @@ export default function Home() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // Show button when scrolling down, hide when scrolling up
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setShowButton(true);
       } else if (currentScrollY < lastScrollY) {
         setShowButton(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 
@@ -175,6 +175,14 @@ export default function Home() {
     learnMore: {
       ar: "اعرف أكثر",
       en: "Learn more"
+    },
+    businessLogin: {
+      ar: "تسجيل الدخول للأعمال",
+      en: "Business Login"
+    },
+    downloadApp: {
+      ar: "حمل التطبيق",
+      en: "Download App"
     }
   };
 
@@ -187,10 +195,10 @@ export default function Home() {
 
           {/* Logo */}
           <div className="flex items-center">
-            <Image 
-              src="/images/logo_shahadd.png" 
-              alt="شِهد" 
-              width={100} 
+            <Image
+              src="/images/logo_shahadd.png"
+              alt="شِهد"
+              width={100}
               height={35}
               className="h-8 md:h-10 w-auto object-contain transition-transform hover:scale-105 cursor-pointer"
               priority
@@ -203,16 +211,29 @@ export default function Home() {
             <a className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
               {lang === "ar" ? "الرئيسية" : "Home"}
             </a>
-            <a className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
+            <Link href="/how-it-works" className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
               {lang === "ar" ? "كيف يعمل" : "How It Works"}
-            </a>
+            </Link>
             <a className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
               {lang === "ar" ? "للأعمال" : "For Business"}
             </a>
           </nav>
 
           {/* Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
+
+            {/* Business Login Button */}
+            <button className="hidden md:flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg bg-[#4d6528] text-white font-ibm-plex-arabic text-sm font-semibold hover:bg-[#5a7530] hover:shadow-lg transition-all">
+              {t.businessLogin[lang]}
+            </button>
+
+            {/* Download App Button */}
+            <Link href="/download" className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-lg border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic text-sm font-semibold hover:bg-[#4d6528] hover:text-white transition-all">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+              <span className="hidden sm:inline">{t.downloadApp[lang]}</span>
+            </Link>
 
             {/* Language Switch */}
             <button
@@ -251,14 +272,14 @@ export default function Home() {
 
         {/* IMAGE */}
         <div className="flex-1 flex justify-center w-full md:w-auto">
-          <Image 
-            src="/images/97398349855.png" 
-            alt="شِهد" 
-            width={200} 
+          <Image
+            src="/images/97398349855.png"
+            alt="شِهد"
+            width={200}
             height={200}
             className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[200px] lg:max-w-[200px] h-auto object-contain drop-shadow-2xl"
             quality={100}
-          />  
+          />
         </div>
 
       </section>
@@ -299,13 +320,13 @@ export default function Home() {
       {/* CARD SECTION */}
       <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 bg-white">
         <div className="flex flex-col md:flex-row items-center gap-8 sm:gap-10 md:gap-12 max-w-6xl mx-auto">
-          
+
           {/* Phone Image */}
           <div className="flex-1 flex justify-center w-full md:w-auto">
-            <Image 
-              src="/images/pay.png" 
+            <Image
+              src="/images/pay.png"
               alt={t.cardTitle[lang]}
-              width={550} 
+              width={550}
               height={550}
               className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[450px] lg:max-w-[550px] h-auto object-contain drop-shadow-2xl"
               quality={100}
@@ -317,13 +338,13 @@ export default function Home() {
             <p className="text-xs sm:text-sm md:text-base text-gray-600 font-federant">
               {t.cardTitle[lang]}
             </p>
-            
+
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic text-black leading-tight">
               {t.cardHeadline[lang]}
               <br />
               {t.cardHeadline2[lang]}
             </h2>
-            
+
             <p className="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed font-federant max-w-lg mx-auto md:mx-0">
               {t.cardDescription[lang]}
             </p>
@@ -338,20 +359,20 @@ export default function Home() {
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative">
             {/* Character Image */}
             <div className="flex-shrink-0 relative w-full md:w-auto -mt-4 md:-mt-16 -mb-4 md:-mb-16 md:-ml-12" style={{ zIndex: 10 }}>
-              <img 
-                src="/images/shahad.png" 
-                alt="شِهد" 
+              <img
+                src="/images/shahad.png"
+                alt="شِهد"
                 className="object-contain drop-shadow-2xl w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto mx-auto md:mx-0"
               />
             </div>
-            
+
             {/* Text Content */}
             <div className="flex-1 text-white flex flex-col justify-center text-center md:text-right w-full md:w-auto">
               {/* Top Text */}
               <p className="text-xs sm:text-sm md:text-base text-white/80 mb-3 sm:mb-4 font-federant">
                 {lang === "ar" ? "انضم لملايين المتسوقين" : "Join millions of shoppers"}
               </p>
-              
+
               {/* Main Headline */}
               <div className="mb-4 sm:mb-6">
                 <div className="inline-block bg-gradient-to-r from-[#a1ae1c] to-[#eddb80] px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg mb-2">
@@ -363,21 +384,21 @@ export default function Home() {
                   {lang === "ar" ? "مع شِهد" : "with Shahd"}
                 </h3>
               </div>
-              
+
               {/* Body Text */}
               <div className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                 <p className="text-sm sm:text-base md:text-lg font-federant leading-relaxed text-white/90">
-                  {lang === "ar" 
+                  {lang === "ar"
                     ? "لاق آلاف المتاجر عشان تقسم مشترياتك منها على أقساط مريحة"
                     : "Find thousands of stores to divide your purchases into comfortable installments"}
                 </p>
                 <p className="text-sm sm:text-base md:text-lg font-federant leading-relaxed text-white/90">
-                  {lang === "ar" 
+                  {lang === "ar"
                     ? "احصل على عروض حصرية، وتتبع دفعاتك بسهولة ومن مكان واحد"
                     : "Get exclusive offers, and track your payments easily from one place"}
                 </p>
               </div>
-              
+
               {/* Call to Action Box */}
               <div className="border-2 border-white/30 rounded-xl sm:rounded-2xl p-4 sm:p-6 bg-white/5 backdrop-blur-sm">
                 <div className="flex flex-col md:flex-row items-center md:items-start md:items-center justify-between gap-4">
@@ -414,8 +435,8 @@ export default function Home() {
 
           <div className="flex flex-col">
             <div className="relative rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden aspect-[4/5] mb-3">
-              <Image 
-                src="/images/shahad.png" 
+              <Image
+                src="/images/shahad.png"
                 alt={t.feature1[lang]}
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-300"
@@ -427,8 +448,8 @@ export default function Home() {
 
           <div className="flex flex-col">
             <div className="relative rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden aspect-[4/5] mb-3">
-              <Image 
-                src="/images/shahad.png" 
+              <Image
+                src="/images/shahad.png"
                 alt={t.feature2[lang]}
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-300"
@@ -440,8 +461,8 @@ export default function Home() {
 
           <div className="flex flex-col">
             <div className="relative rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden aspect-[4/5] mb-3">
-              <Image 
-                src="/images/shahad.png" 
+              <Image
+                src="/images/shahad.png"
                 alt={t.feature3[lang]}
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-300"
@@ -453,8 +474,8 @@ export default function Home() {
 
           <div className="flex flex-col">
             <div className="relative rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden aspect-[4/5] mb-3">
-              <Image 
-                src="/images/shahad.png" 
+              <Image
+                src="/images/shahad.png"
                 alt={t.feature4[lang]}
                 fill
                 className="object-cover hover:scale-110 transition-transform duration-300"
@@ -472,33 +493,39 @@ export default function Home() {
         <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#132c17] via-[#4d6528] to-[#a1ae1c] p-6 sm:p-8 md:p-12 lg:p-16 text-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic text-white mb-3 sm:mb-4">{t.merchantsTitle[lang]}</h2>
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 max-w-3xl mx-auto font-federant leading-relaxed">{t.merchantsDesc[lang]}</p>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic text-white mb-3 sm:mb-4 font-bold">{t.merchantsTitle[lang]}</h2>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-3xl mx-auto font-federant leading-relaxed">{t.merchantsDesc[lang]}</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
               <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-colors">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <span className="text-2xl sm:text-3xl">📈</span>
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                  </svg>
                 </div>
                 <h3 className="text-lg sm:text-xl font-ibm-plex-arabic font-bold text-white mb-2">{t.merchantsFeature1[lang]}</h3>
-                <p className="text-white/80 text-xs sm:text-sm font-federant">{lang === "ar" ? "زد مبيعاتك بشكل كبير" : "Significantly increase your sales"}</p>
+                <p className="text-white text-xs sm:text-sm font-federant">{lang === "ar" ? "زد مبيعاتك بشكل كبير" : "Significantly increase your sales"}</p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-colors">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <span className="text-2xl sm:text-3xl">💰</span>
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
                 <h3 className="text-lg sm:text-xl font-ibm-plex-arabic font-bold text-white mb-2">{t.merchantsFeature2[lang]}</h3>
-                <p className="text-white/80 text-xs sm:text-sm font-federant">{lang === "ar" ? "احصل على دفعاتك فوراً" : "Get your payments instantly"}</p>
+                <p className="text-white text-xs sm:text-sm font-federant">{lang === "ar" ? "احصل على دفعاتك فوراً" : "Get your payments instantly"}</p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center hover:bg-white/20 transition-colors">
                 <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                  <span className="text-2xl sm:text-3xl">⚙️</span>
+                  <svg className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
                 </div>
                 <h3 className="text-lg sm:text-xl font-ibm-plex-arabic font-bold text-white mb-2">{t.merchantsFeature3[lang]}</h3>
-                <p className="text-white/80 text-xs sm:text-sm font-federant">{lang === "ar" ? "نظام إدارة بسيط وسهل" : "Simple and easy management system"}</p>
+                <p className="text-white text-xs sm:text-sm font-federant">{lang === "ar" ? "نظام إدارة بسيط وسهل" : "Simple and easy management system"}</p>
               </div>
             </div>
 
@@ -514,27 +541,27 @@ export default function Home() {
       {/* FOOTER */}
       <footer className="py-8 sm:py-10 md:py-12 text-center border-t border-gray-200 bg-gradient-to-b from-[#132c17] to-[#0f1c16] text-white">
         <div className="container mx-auto px-4 sm:px-6">
-          <Image 
-            src="/images/logo_shahadd.png" 
-            alt="شِهد" 
-            width={80} 
+          <Image
+            src="/images/logo_shahadd.png"
+            alt="شِهد"
+            width={80}
             height={28}
             className="h-6 sm:h-7 md:h-8 w-auto mx-auto mb-3 sm:mb-4 object-contain"
             quality={100}
           />
           <p className="text-white/80 font-federant mb-4 sm:mb-6 text-sm sm:text-base">
-            {lang === "ar" 
-              ? "منصة تمويل مبتكرة تتيح لك الشراء الآن والدفع لاحقًا" 
+            {lang === "ar"
+              ? "منصة تمويل مبتكرة تتيح لك الشراء الآن والدفع لاحقًا"
               : "An innovative financing platform that lets you buy now and pay later"}
           </p>
           <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 flex-wrap text-xs sm:text-sm">
             <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "عن شِهد" : "About"}</a>
-            <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "اتصل بنا" : "Contact"}</a>
+            <Link href="/faq" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "اتصل بنا" : "Contact"}</Link>
             <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الشروط والأحكام" : "Terms"}</a>
             <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الخصوصية" : "Privacy"}</a>
             <Link href="/faq" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الأسئلة الشائعة" : "FAQ"}</Link>
           </div>
-          
+
           {/* Bottom Section */}
           <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-4 sm:gap-6 mb-3 sm:mb-4">
             {/* Social Media - Left */}
@@ -544,21 +571,21 @@ export default function Home() {
                 {/* LinkedIn */}
                 <a href="#" className="text-white/80 hover:text-white transition transform hover:scale-110" aria-label="LinkedIn">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </a>
-                
+
                 {/* Facebook */}
                 <a href="#" className="text-white/80 hover:text-white transition transform hover:scale-110" aria-label="Facebook">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                   </svg>
                 </a>
-                
+
                 {/* Instagram */}
                 <a href="#" className="text-white/80 hover:text-white transition transform hover:scale-110" aria-label="Instagram">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                   </svg>
                 </a>
               </div>
@@ -574,7 +601,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Copyright */}
           <p className="text-white/60 text-xs sm:text-sm font-federant text-center">
             © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
@@ -583,10 +610,9 @@ export default function Home() {
       </footer>
 
       {/* Fixed Download Button for Mobile */}
-      <button 
-        className={`md:hidden fixed bottom-0 left-0 right-0 mx-4 mb-4 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#132c17] to-[#4d6528] text-white text-base font-ibm-plex-arabic font-bold hover:opacity-90 shadow-2xl transition-all duration-300 z-50 flex items-center justify-center gap-2 ${
-          showButton ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-        }`}
+      <button
+        className={`md:hidden fixed bottom-0 left-0 right-0 mx-4 mb-4 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#132c17] to-[#4d6528] text-white text-base font-ibm-plex-arabic font-bold hover:opacity-90 shadow-2xl transition-all duration-300 z-50 flex items-center justify-center gap-2 ${showButton ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+          }`}
       >
         <span>{lang === "ar" ? "حمل التطبيق" : "Download App"}</span>
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
