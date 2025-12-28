@@ -92,6 +92,7 @@ export default function HowItWorksPage() {
                     </div>
                 </div>
             </header>
+            {/* // trigger redeploy */}
 
             {/* HERO SECTION */}
             <section className="relative bg-gradient-to-br from-[#132c17] via-[#4d6528] to-[#a1ae1c] py-6 md:py-8 lg:py-10">
