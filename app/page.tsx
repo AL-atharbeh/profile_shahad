@@ -256,57 +256,60 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION - REFINED LANGUAGE-AWARE LAYOUT */}
+      {/* HERO SECTION - PREMIUM REFINEMENT */}
       <section className="relative w-full bg-[#003d2b] overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 py-10 md:py-16">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
+        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-20">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-28">
             
             {/* Text Content: Right side in RTL, Left side in LTR */}
-            <div className="w-full md:w-[55%] text-white text-center md:text-start space-y-6 sm:space-y-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic font-bold leading-tight">
+            <div className="w-full md:w-1/2 text-white text-right md:text-start space-y-6 md:space-y-10">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold leading-tight">
                 {t.title[lang]}
               </h1>
 
               <div className="max-w-2xl mx-auto md:mx-0">
-                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant font-medium leading-relaxed">
                   {t.subtitle[lang]}
                 </p>
               </div>
 
               {/* Action Area */}
-              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-6 pt-4">
+              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-8 pt-4">
                 
                 {/* Download Card */}
-                <div className="flex items-center gap-4 p-4 border border-white/20 rounded-2xl bg-white/10 backdrop-blur-sm shadow-xl">
+                <div className="flex items-center gap-5 p-5 border border-white/20 rounded-3xl bg-white/10 backdrop-blur-md shadow-2xl hover:bg-white/15 transition-all">
                   <div className="text-right">
-                    <p className="text-base sm:text-lg font-ibm-plex-arabic font-bold mb-1">{t.downloadApp[lang]}</p>
-                    <div className="flex items-center justify-end gap-1.5 opacity-80">
-                      <span className="text-yellow-400 text-xs">★★★★★</span>
-                      <span className="text-[10px] text-white font-bold">4.8</span>
+                    <p className="text-lg font-ibm-plex-arabic font-bold mb-1">{t.downloadApp[lang]}</p>
+                    <div className="flex items-center justify-end gap-2 opacity-80">
+                      <span className="text-yellow-400 text-sm">★★★★★</span>
+                      <span className="text-xs text-white font-bold tracking-widest">4.8</span>
                     </div>
                   </div>
-                  <div className="w-16 h-16 bg-white rounded-xl p-1.5 flex shrink-0">
-                    <div className="w-full h-full bg-gray-50 rounded flex items-center justify-center border-2 border-dashed border-gray-200">
-                      <span className="text-[9px] text-gray-400 font-bold">QR</span>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl p-2 flex shrink-0 shadow-inner">
+                    <div className="w-full h-full bg-gray-50 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-200">
+                      <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Scan QR</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full sm:w-auto px-10 py-4 rounded-xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-lg hover:bg-white/90 transition-all shadow-xl transform hover:scale-105">
+                <button className="w-full sm:w-auto px-12 py-5 rounded-2xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-xl hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all transform hover:scale-[1.03] active:scale-95">
                   {t.start[lang]}
                 </button>
               </div>
             </div>
 
             {/* Image Container: Left side in RTL, Right side in LTR */}
-            <div className="w-full md:w-[45%] flex justify-center">
-              <div className="relative w-full max-w-lg">
+            <div className="w-full md:w-1/2 flex justify-center">
+              <div className="relative w-full max-w-lg lg:max-w-xl group">
+                {/* The "Green Shadow/Glow" mentioned by User */}
+                <div className="absolute inset-0 bg-[#a1ae1c]/30 blur-[100px] rounded-full scale-90 opacity-60 group-hover:opacity-80 transition-opacity duration-1000"></div>
+                
                 <Image
                   src="/images/bannar.png"
                   alt="شِهد"
-                  width={600}
-                  height={600}
-                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:drop-shadow-[0_0_60px_rgba(161,174,28,0.2)] transition-transform duration-700 group-hover:scale-[1.02]"
                   priority
                   quality={100}
                 />
@@ -316,9 +319,8 @@ export default function Home() {
           </div>
         </div>
         
-        {/* Subtle decorative glow */}
-        <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        {/* Decorative background glow */}
+        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-[#a1ae1c]/5 rounded-full blur-[120px] -animate-pulse"></div>
       </section>
 
       {/* HOW IT WORKS */}
