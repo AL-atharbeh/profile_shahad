@@ -257,34 +257,40 @@ export default function Home() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12">
-
-        {/* TEXT */}
-        <div className="space-y-4 sm:space-y-6 w-full text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight text-black">
-            {t.title[lang]}
-          </h1>
-
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed font-federant mx-auto">
-            {t.subtitle[lang]}
-          </p>
-        </div>
-
-        {/* IMAGE */}
-        <div className="w-full flex justify-center px-2">
-          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+      <section className="relative w-full pb-12 pt-6 sm:pt-8 md:pt-12 px-4 sm:px-6">
+        <div className="container mx-auto max-w-7xl relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] shadow-2xl min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center group bg-[#0f1c16]">
+          {/* Background Image */}
+          <div className="absolute inset-0 w-full h-full">
             <Image
               src="/images/bannar.png"
               alt="شِهد"
-              width={1400}
-              height={500}
-              className="w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500"
+              fill
+              className="object-cover object-top sm:object-center transform group-hover:scale-105 transition-transform duration-1000 ease-in-out opacity-90"
               quality={100}
               priority
             />
+            {/* Premium Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0f1c16]/30 via-[#0f1c16]/10 to-[#0f1c16]/95"></div>
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
+          </div>
+
+          {/* TEXT Overlay */}
+          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 text-center text-white space-y-6 sm:space-y-8 max-w-5xl mx-auto mt-20 sm:mt-32">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
+              {t.title[lang]}
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-white/95 leading-relaxed font-federant max-w-3xl mx-auto drop-shadow-md">
+              {t.subtitle[lang]}
+            </p>
+            
+            <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+               <button className="px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-[#a1ae1c] to-[#c7d626] text-[#132c17] font-ibm-plex-arabic font-bold text-lg hover:shadow-[0_0_25px_rgba(161,174,28,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
+                 {t.start[lang]}
+               </button>
+            </div>
           </div>
         </div>
-
       </section>
 
       {/* HOW IT WORKS */}
