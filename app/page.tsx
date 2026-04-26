@@ -256,65 +256,35 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION - MODERN CLEAN SPLIT */}
-      <section className="relative w-full bg-gradient-to-br from-white via-white to-[#f0fdf4] overflow-hidden py-12 md:py-20 lg:py-24">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
-            
-            {/* Text Content - Right in RTL, Left in LTR */}
-            <div className="w-full md:w-1/2 text-right md:text-start space-y-6 md:space-y-10">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold text-[#132c17] leading-[1.15]">
-                {t.title[lang]}
-              </h1>
+      {/* HERO SECTION */}
+      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12">
 
-              <div className="max-w-xl mx-auto md:mx-0">
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-federant leading-relaxed">
-                  {t.subtitle[lang]}
-                </p>
-              </div>
+        {/* TEXT */}
+        <div className="space-y-4 sm:space-y-6 w-full text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight text-black">
+            {t.title[lang]}
+          </h1>
 
-              {/* Action Area: QR Card and CTA */}
-              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-6 pt-4">
-                
-                {/* Download App Card - Clean Modern Style */}
-                <div className="flex items-center gap-5 p-4 pr-5 rounded-3xl bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all">
-                  <div className="text-right">
-                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">{lang === 'ar' ? 'يتوفر الآن على' : 'Available Now'}</p>
-                    <p className="text-lg font-ibm-plex-arabic font-bold text-[#4d6528]">{t.downloadApp[lang]}</p>
-                  </div>
-                  <div className="w-16 h-16 bg-[#f0fdf4] rounded-2xl flex items-center justify-center p-1.5 border border-[#4d6528]/10 shadow-inner">
-                    <div className="w-full h-full bg-white rounded-xl flex items-center justify-center border-2 border-dashed border-[#4d6528]/20">
-                       <span className="text-[10px] text-[#4d6528]/30 font-bold">QR</span>
-                    </div>
-                  </div>
-                </div>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed font-federant mx-auto">
+            {t.subtitle[lang]}
+          </p>
+        </div>
 
-                <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-[#4d6528] text-white font-ibm-plex-arabic font-bold text-lg hover:bg-[#132c17] transition-all shadow-xl hover:shadow-[#4d6528]/20 transform hover:-translate-y-1">
-                  {t.start[lang]}
-                </button>
-              </div>
-            </div>
-
-            {/* Image Content - Left in RTL, Right in LTR */}
-            <div className="w-full md:w-1/2 flex justify-center">
-              <div className="relative w-full max-w-lg lg:max-w-xl group">
-                {/* Decorative Elements */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#4d6528]/10 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
-                
-                <Image
-                  src="/images/bannar.png"
-                  alt="شِهد"
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform duration-700 group-hover:scale-[1.02]"
-                  priority
-                  quality={100}
-                />
-              </div>
-            </div>
-
+        {/* IMAGE */}
+        <div className="w-full flex justify-center px-2">
+          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+            <Image
+              src="/images/bannar.png"
+              alt="شِهد"
+              width={1400}
+              height={500}
+              className="w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500"
+              quality={100}
+              priority
+            />
           </div>
         </div>
+
       </section>
 
       {/* HOW IT WORKS */}
