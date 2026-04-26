@@ -257,34 +257,41 @@ export default function Home() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 flex flex-col items-center gap-8 md:gap-12">
+      <section className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <Image
+          src="/images/bannar.png"
+          alt="شِهد"
+          fill
+          className="object-cover transition-transform duration-700 hover:scale-105"
+          priority
+          quality={100}
+        />
+        
+        {/* Subtle Gradient Overlay for readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/10" />
 
-        {/* TEXT */}
-        <div className="space-y-4 sm:space-y-6 w-full text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight text-black">
-            {t.title[lang]}
-          </h1>
+        {/* Content */}
+        <div className="relative z-10 w-full container mx-auto px-4 text-center">
+          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight text-black font-bold">
+              {t.title[lang]}
+            </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-4xl leading-relaxed font-federant mx-auto">
-            {t.subtitle[lang]}
-          </p>
-        </div>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-800 max-w-4xl leading-relaxed font-federant mx-auto font-medium">
+              {t.subtitle[lang]}
+            </p>
 
-        {/* IMAGE */}
-        <div className="w-full flex justify-center px-2">
-          <div className="relative w-full max-w-6xl overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-            <Image
-              src="/images/bannar.png"
-              alt="شِهد"
-              width={1400}
-              height={500}
-              className="w-full h-auto object-contain transform hover:scale-[1.02] transition-transform duration-500"
-              quality={100}
-              priority
-            />
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              <button className="px-8 py-3.5 rounded-full bg-[#4d6528] text-white font-ibm-plex-arabic font-bold hover:bg-[#5a7530] transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
+                {t.start[lang]}
+              </button>
+              <button className="px-8 py-3.5 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic font-bold hover:bg-white transition-all shadow-lg transform hover:scale-105">
+                {t.merchant[lang]}
+              </button>
+            </div>
           </div>
         </div>
-
       </section>
 
       {/* HOW IT WORKS */}
