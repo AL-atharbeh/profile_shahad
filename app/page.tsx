@@ -256,60 +256,57 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION - PREMIUM REFINEMENT */}
-      <section className="relative w-full bg-[#003d2b] overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6 py-12 md:py-20">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-16 lg:gap-28">
+      {/* HERO SECTION - MODERN CLEAN SPLIT */}
+      <section className="relative w-full bg-gradient-to-br from-white via-white to-[#f0fdf4] overflow-hidden py-12 md:py-20 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
             
-            {/* Text Content: Right side in RTL, Left side in LTR */}
-            <div className="w-full md:w-1/2 text-white text-right md:text-start space-y-6 md:space-y-10">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold leading-tight">
+            {/* Text Content - Right in RTL, Left in LTR */}
+            <div className="w-full md:w-1/2 text-right md:text-start space-y-6 md:space-y-10">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold text-[#132c17] leading-[1.15]">
                 {t.title[lang]}
               </h1>
 
-              <div className="max-w-2xl mx-auto md:mx-0">
-                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant font-medium leading-relaxed">
+              <div className="max-w-xl mx-auto md:mx-0">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-federant leading-relaxed">
                   {t.subtitle[lang]}
                 </p>
               </div>
 
-              {/* Action Area */}
-              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-8 pt-4">
+              {/* Action Area: QR Card and CTA */}
+              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-6 pt-4">
                 
-                {/* Download Card */}
-                <div className="flex items-center gap-5 p-5 border border-white/20 rounded-3xl bg-white/10 backdrop-blur-md shadow-2xl hover:bg-white/15 transition-all">
+                {/* Download App Card - Clean Modern Style */}
+                <div className="flex items-center gap-5 p-4 pr-5 rounded-3xl bg-white border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] transition-all">
                   <div className="text-right">
-                    <p className="text-lg font-ibm-plex-arabic font-bold mb-1">{t.downloadApp[lang]}</p>
-                    <div className="flex items-center justify-end gap-2 opacity-80">
-                      <span className="text-yellow-400 text-sm">★★★★★</span>
-                      <span className="text-xs text-white font-bold tracking-widest">4.8</span>
-                    </div>
+                    <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">{lang === 'ar' ? 'يتوفر الآن على' : 'Available Now'}</p>
+                    <p className="text-lg font-ibm-plex-arabic font-bold text-[#4d6528]">{t.downloadApp[lang]}</p>
                   </div>
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl p-2 flex shrink-0 shadow-inner">
-                    <div className="w-full h-full bg-gray-50 rounded-xl flex items-center justify-center border-2 border-dashed border-gray-200">
-                      <span className="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Scan QR</span>
+                  <div className="w-16 h-16 bg-[#f0fdf4] rounded-2xl flex items-center justify-center p-1.5 border border-[#4d6528]/10 shadow-inner">
+                    <div className="w-full h-full bg-white rounded-xl flex items-center justify-center border-2 border-dashed border-[#4d6528]/20">
+                       <span className="text-[10px] text-[#4d6528]/30 font-bold">QR</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full sm:w-auto px-12 py-5 rounded-2xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-xl hover:shadow-[0_0_40px_rgba(255,255,255,0.2)] transition-all transform hover:scale-[1.03] active:scale-95">
+                <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-[#4d6528] text-white font-ibm-plex-arabic font-bold text-lg hover:bg-[#132c17] transition-all shadow-xl hover:shadow-[#4d6528]/20 transform hover:-translate-y-1">
                   {t.start[lang]}
                 </button>
               </div>
             </div>
 
-            {/* Image Container: Left side in RTL, Right side in LTR */}
+            {/* Image Content - Left in RTL, Right in LTR */}
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative w-full max-w-lg lg:max-w-xl group">
-                {/* The "Green Shadow/Glow" mentioned by User */}
-                <div className="absolute inset-0 bg-[#a1ae1c]/30 blur-[100px] rounded-full scale-90 opacity-60 group-hover:opacity-80 transition-opacity duration-1000"></div>
+                {/* Decorative Elements */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] bg-[#4d6528]/10 rounded-full blur-3xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 
                 <Image
                   src="/images/bannar.png"
                   alt="شِهد"
                   width={800}
-                  height={800}
-                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] md:drop-shadow-[0_0_60px_rgba(161,174,28,0.2)] transition-transform duration-700 group-hover:scale-[1.02]"
+                  height={600}
+                  className="w-full h-auto object-contain relative z-10 drop-shadow-[0_20px_50px_rgba(0,0,0,0.1)] transition-transform duration-700 group-hover:scale-[1.02]"
                   priority
                   quality={100}
                 />
@@ -318,9 +315,6 @@ export default function Home() {
 
           </div>
         </div>
-        
-        {/* Decorative background glow */}
-        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-[#a1ae1c]/5 rounded-full blur-[120px] -animate-pulse"></div>
       </section>
 
       {/* HOW IT WORKS */}
