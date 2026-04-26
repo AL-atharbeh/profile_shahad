@@ -256,70 +256,69 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION - TABBY STYLE REPLICATED */}
-      <section className="relative w-full bg-[#003d2b] min-h-[550px] md:min-h-[650px] lg:min-h-[750px] flex items-center overflow-hidden">
-        
-        {/* Visual Component: Image placed on the left for RTL layout */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/bannar.png"
-            alt="Background"
-            fill
-            className="object-cover object-center md:object-left opacity-30 md:opacity-100"
-            priority
-            quality={100}
-          />
-          {/* Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-l from-[#003d2b] via-[#003d2b]/40 to-transparent hidden md:block" />
-          <div className="absolute inset-0 bg-[#003d2b]/60 md:hidden" />
-        </div>
-
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-end">
+      {/* HERO SECTION - REFINED LANGUAGE-AWARE LAYOUT */}
+      <section className="relative w-full bg-[#003d2b] overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-6 py-10 md:py-16">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
             
-            {/* Text Content - Right Aligned (for RTL) and White */}
-            <div className="w-full md:w-3/5 text-right text-white space-y-6 md:space-y-8">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold leading-[1.1] drop-shadow-xl">
+            {/* Text Content: Right side in RTL, Left side in LTR */}
+            <div className="w-full md:w-[55%] text-white text-center md:text-start space-y-6 sm:space-y-8">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic font-bold leading-tight">
                 {t.title[lang]}
               </h1>
 
-              <div className="max-w-2xl mr-0 ml-auto">
-                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant leading-relaxed drop-shadow-md">
+              <div className="max-w-2xl mx-auto md:mx-0">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant leading-relaxed">
                   {t.subtitle[lang]}
                 </p>
               </div>
 
-              {/* Action Area: QR Code Box and CTAs */}
-              <div className="flex flex-col sm:flex-row items-center justify-end gap-6 pt-4 sm:pt-8">
+              {/* Action Area */}
+              <div className="flex flex-col sm:flex-row items-center md:items-start lg:items-center gap-6 pt-4">
                 
-                {/* Download App Card */}
-                <div className="group flex items-center gap-4 p-4 border border-white/30 rounded-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all cursor-pointer shadow-2xl">
+                {/* Download Card */}
+                <div className="flex items-center gap-4 p-4 border border-white/20 rounded-2xl bg-white/10 backdrop-blur-sm shadow-xl">
                   <div className="text-right">
                     <p className="text-base sm:text-lg font-ibm-plex-arabic font-bold mb-1">{t.downloadApp[lang]}</p>
-                    <div className="flex items-center justify-end gap-1.5">
+                    <div className="flex items-center justify-end gap-1.5 opacity-80">
                       <span className="text-yellow-400 text-xs">★★★★★</span>
-                      <span className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Rating 4.8</span>
+                      <span className="text-[10px] text-white font-bold">4.8</span>
                     </div>
                   </div>
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl p-1.5 shadow-inner flex shrink-0">
+                  <div className="w-16 h-16 bg-white rounded-xl p-1.5 flex shrink-0">
                     <div className="w-full h-full bg-gray-50 rounded flex items-center justify-center border-2 border-dashed border-gray-200">
-                      <span className="text-[10px] text-gray-400 font-bold rotate-[-15deg]">QR ID</span>
+                      <span className="text-[9px] text-gray-400 font-bold">QR</span>
                     </div>
                   </div>
                 </div>
 
-                <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-1">
+                <button className="w-full sm:w-auto px-10 py-4 rounded-xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-lg hover:bg-white/90 transition-all shadow-xl transform hover:scale-105">
                   {t.start[lang]}
                 </button>
               </div>
             </div>
 
+            {/* Image Container: Left side in RTL, Right side in LTR */}
+            <div className="w-full md:w-[45%] flex justify-center">
+              <div className="relative w-full max-w-lg">
+                <Image
+                  src="/images/bannar.png"
+                  alt="شِهد"
+                  width={600}
+                  height={600}
+                  className="w-full h-auto object-contain drop-shadow-2xl"
+                  priority
+                  quality={100}
+                />
+              </div>
+            </div>
+
           </div>
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
+        
+        {/* Subtle decorative glow */}
+        <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
       </section>
 
       {/* HOW IT WORKS */}
