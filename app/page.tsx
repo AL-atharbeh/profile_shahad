@@ -257,35 +257,37 @@ export default function Home() {
       </header>
 
       {/* HERO SECTION */}
-      <section className="relative w-full pb-12 pt-6 sm:pt-8 md:pt-12 px-4 sm:px-6">
-        <div className="container mx-auto max-w-7xl relative overflow-hidden rounded-3xl sm:rounded-[2.5rem] shadow-2xl min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center group bg-[#0f1c16]">
+      <section className="relative w-full pb-8 pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6">
+        <div className="container mx-auto max-w-7xl relative overflow-hidden flex items-center group bg-white rounded-2xl sm:rounded-3xl shadow-xl min-h-[350px] sm:min-h-[400px] md:min-h-[450px]">
           {/* Background Image */}
           <div className="absolute inset-0 w-full h-full">
             <Image
               src="/images/bannar.png"
               alt="شِهد"
               fill
-              className="object-cover object-top sm:object-center transform group-hover:scale-105 transition-transform duration-1000 ease-in-out opacity-90"
+              className="object-contain object-center transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out"
               quality={100}
               priority
             />
-            {/* Premium Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0f1c16]/30 via-[#0f1c16]/10 to-[#0f1c16]/95"></div>
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-700"></div>
+          </div>
+
+          {/* Green Glow / Shadow exclusively behind the text */}
+          <div className="absolute flex items-center justify-end pointer-events-none w-full h-full px-4 sm:px-8 md:px-16">
+            <div className="w-[100%] sm:w-[70%] md:w-[50%] h-[90%] sm:h-[100%] bg-[#132c17]/80 md:bg-[#132c17]/70 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[100px]"></div>
           </div>
 
           {/* TEXT Overlay */}
-          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 text-center text-white space-y-6 sm:space-y-8 max-w-5xl mx-auto mt-20 sm:mt-32">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_8px_rgba(0,0,0,0.6)]">
+          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 space-y-3 sm:space-y-4 md:space-y-6 max-w-6xl mx-auto text-end flex flex-col items-end mt-4 sm:mt-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_10px_rgba(19,44,23,0.8)] text-white">
               {t.title[lang]}
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-white/95 leading-relaxed font-federant max-w-3xl mx-auto drop-shadow-md">
+            <p className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed font-federant max-w-md md:max-w-xl drop-shadow-[0_4px_8px_rgba(19,44,23,0.8)]">
               {t.subtitle[lang]}
             </p>
             
-            <div className="pt-4 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-               <button className="px-8 sm:px-10 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-[#a1ae1c] to-[#c7d626] text-[#132c17] font-ibm-plex-arabic font-bold text-lg hover:shadow-[0_0_25px_rgba(161,174,28,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-end gap-3 w-full">
+               <button className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#a1ae1c] to-[#c7d626] text-[#132c17] font-ibm-plex-arabic font-bold text-base sm:text-lg hover:shadow-[0_0_20px_rgba(161,174,28,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto mt-2">
                  {t.start[lang]}
                </button>
             </div>
