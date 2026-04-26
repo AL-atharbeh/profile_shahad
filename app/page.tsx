@@ -295,86 +295,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW IT WORKS - REDESIGNED */}
-      <section className="py-16 sm:py-24 md:py-32 bg-white overflow-hidden" id="how-it-works">
-        <div className="container mx-auto px-4 sm:px-6 mb-12 sm:mb-20 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic text-[#132c17] font-bold">
-            {t.hiw[lang]}
-          </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-[#132c17] via-[#4d6528] to-[#a1ae1c] mx-auto mt-6 rounded-full"></div>
-        </div>
+      {/* HOW IT WORKS - 3 COLUMN GRID */}
+      <section className="py-16 sm:py-24 bg-[#f8faf7]">
+        <div className="container mx-auto px-4 sm:px-6">
+          
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-ibm-plex-arabic text-[#132c17] font-bold mb-4">
+              {t.hiw[lang]}
+            </h2>
+            <div className="w-20 h-1 bg-[#a1ae1c] mx-auto rounded-full"></div>
+          </div>
 
-        <div className="space-y-12 sm:space-y-20 md:space-y-32">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
 
-          {/* STEP 1 */}
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 bg-[#f8faf7] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#132c17]/5 group">
-              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+            {/* STEP 1 */}
+            <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100">
+              <div className="relative w-full h-64 sm:h-72 overflow-hidden">
                 <Image 
                   src="/images/pic1.png" 
                   alt={t.step1[lang]} 
                   fill 
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center font-bold text-[#132c17] text-xl shadow-lg border border-[#132c17]/10">1</div>
               </div>
-              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
-                <span className="text-5xl sm:text-7xl font-bold text-[#132c17]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">01</span>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#132c17] mb-4 sm:mb-6 font-bold leading-tight">
+              <div className="p-8 sm:p-10 flex flex-col flex-grow text-right">
+                <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-4 font-bold leading-tight">
                   {t.step1[lang]}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">
                   {t.step1Desc[lang]}
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* STEP 2 */}
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0 bg-[#fdfcf5] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#4d6528]/5 group">
-              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+            {/* STEP 2 */}
+            <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100">
+              <div className="relative w-full h-64 sm:h-72 overflow-hidden">
                 <Image 
                   src="/images/pic2.png" 
                   alt={t.step2[lang]} 
                   fill 
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center font-bold text-[#4d6528] text-xl shadow-lg border border-[#4d6528]/10">2</div>
               </div>
-              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
-                <span className="text-5xl sm:text-7xl font-bold text-[#4d6528]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">02</span>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#4d6528] mb-4 sm:mb-6 font-bold leading-tight">
+              <div className="p-8 sm:p-10 flex flex-col flex-grow text-right">
+                <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#4d6528] mb-4 font-bold leading-tight">
                   {t.step2[lang]}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">
                   {t.step2Desc[lang]}
                 </p>
               </div>
             </div>
-          </div>
 
-          {/* STEP 3 */}
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 bg-[#fafaf5] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#a1ae1c]/5 group">
-              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+            {/* STEP 3 */}
+            <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col h-full border border-gray-100">
+              <div className="relative w-full h-64 sm:h-72 overflow-hidden">
                 <Image 
                   src="/images/pic3.png" 
                   alt={t.step3[lang]} 
                   fill 
-                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700" 
                 />
+                <div className="absolute top-4 right-4 w-12 h-12 bg-white/90 backdrop-blur rounded-2xl flex items-center justify-center font-bold text-[#a1ae1c] text-xl shadow-lg border border-[#a1ae1c]/10">3</div>
               </div>
-              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
-                <span className="text-5xl sm:text-7xl font-bold text-[#132c17]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">03</span>
-                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#132c17] mb-4 sm:mb-6 font-bold leading-tight">
+              <div className="p-8 sm:p-10 flex flex-col flex-grow text-right">
+                <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-4 font-bold leading-tight">
                   {t.step3[lang]}
                 </h3>
-                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">
                   {t.step3Desc[lang]}
                 </p>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </section>
 
@@ -421,7 +418,7 @@ export default function Home() {
             {/* Character Image */}
             <div className="flex-shrink-0 relative w-full md:w-auto -mt-4 md:-mt-16 -mb-4 md:-mb-16 md:-ml-12" style={{ zIndex: 10 }}>
               <img
-                src="/images/shahad.png"
+                src="/images/shopshahed.png"
                 alt="شِهد"
                 className="object-contain drop-shadow-2xl w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto mx-auto md:mx-0"
               />
