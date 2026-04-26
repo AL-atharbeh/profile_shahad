@@ -282,7 +282,7 @@ export default function Home() {
               {t.title[lang]}
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-white/95 leading-relaxed font-federant max-w-sm md:max-w-lg drop-shadow-[0_4px_8px_rgba(19,44,23,0.8)]">
+            <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed font-federant max-w-sm md:max-w-lg drop-shadow-[0_4px_8px_rgba(19,44,23,0.8)]">
               {t.subtitle[lang]}
             </p>
 
@@ -301,27 +301,45 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
 
-          <div className="p-6 sm:p-8 md:p-10 border border-transparent bg-gradient-to-br from-[#132c17]/20 via-[#4d6528]/15 to-[#a1ae1c]/10 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition bg-white transform hover:-translate-y-2">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#132c17]/10 via-[#4d6528]/10 to-[#a1ae1c]/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-              <span className="text-2xl sm:text-3xl font-ibm-plex-arabic bg-gradient-to-r from-[#132c17] via-[#4d6528] to-[#a1ae1c] bg-clip-text text-transparent">1</span>
+          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
+            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
+              <Image 
+                src="/images/pic1.png" 
+                alt={t.step1[lang]} 
+                fill 
+                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute top-3 right-3 w-8 h-8 bg-[#132c17] text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">1</div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-black mb-2 sm:mb-3">{t.step1[lang]}</h3>
+            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-3 font-bold">{t.step1[lang]}</h3>
             <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step1Desc[lang]}</p>
           </div>
 
-          <div className="p-6 sm:p-8 md:p-10 border border-transparent bg-gradient-to-br from-[#132c17]/20 via-[#4d6528]/15 to-[#a1ae1c]/10 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition bg-white transform hover:-translate-y-2">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#132c17]/10 via-[#4d6528]/10 to-[#a1ae1c]/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-              <span className="text-2xl sm:text-3xl font-ibm-plex-arabic bg-gradient-to-r from-[#132c17] via-[#4d6528] to-[#a1ae1c] bg-clip-text text-transparent">2</span>
+          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
+            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
+              <Image 
+                src="/images/pic2.png" 
+                alt={t.step2[lang]} 
+                fill 
+                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute top-3 right-3 w-8 h-8 bg-[#4d6528] text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">2</div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-black mb-2 sm:mb-3">{t.step2[lang]}</h3>
+            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#4d6528] mb-3 font-bold">{t.step2[lang]}</h3>
             <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step2Desc[lang]}</p>
           </div>
 
-          <div className="p-6 sm:p-8 md:p-10 border border-transparent bg-gradient-to-br from-[#132c17]/20 via-[#4d6528]/15 to-[#a1ae1c]/10 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-xl transition bg-white transform hover:-translate-y-2">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#132c17]/10 via-[#4d6528]/10 to-[#a1ae1c]/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-              <span className="text-2xl sm:text-3xl font-ibm-plex-arabic bg-gradient-to-r from-[#132c17] via-[#4d6528] to-[#a1ae1c] bg-clip-text text-transparent">3</span>
+          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
+            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
+              <Image 
+                src="/images/pic3.png" 
+                alt={t.step3[lang]} 
+                fill 
+                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute top-3 right-3 w-8 h-8 bg-[#a1ae1c] text-[#132c17] rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">3</div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-black mb-2 sm:mb-3">{t.step3[lang]}</h3>
+            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-3 font-bold">{t.step3[lang]}</h3>
             <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step3Desc[lang]}</p>
           </div>
 
