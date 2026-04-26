@@ -214,9 +214,9 @@ export default function Home() {
             <Link href="/how-it-works" className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
               {lang === "ar" ? "كيف يعمل" : "How It Works"}
             </Link>
-            <a className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
+            <Link href="/business" className="text-gray-800 hover:text-gray-900 px-4 py-2.5 rounded-lg hover:bg-gradient-to-r hover:from-[#132c17]/5 hover:via-[#4d6528]/5 hover:to-[#a1ae1c]/5 transition-all cursor-pointer text-base md:text-lg">
               {lang === "ar" ? "للأعمال" : "For Business"}
-            </a>
+            </Link>
           </nav>
 
           {/* Actions */}
@@ -416,11 +416,11 @@ export default function Home() {
         <div className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#132c17] via-[#4d6528] to-[#132c17] p-6 sm:p-8 md:p-12 shadow-2xl relative overflow-hidden">
           <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative">
             {/* Character Image */}
-            <div className="flex-shrink-0 relative w-full md:w-auto -mt-4 md:-mt-16 -mb-4 md:-mb-16 md:-ml-12" style={{ zIndex: 10 }}>
+            <div className="flex-shrink-0 relative w-full md:w-auto -mt-6 md:-mt-20 -mb-6 md:-mb-20 md:-ml-8" style={{ zIndex: 10 }}>
               <img
                 src="/images/shopshahed.png"
                 alt="شِهد"
-                className="object-contain drop-shadow-2xl w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] h-auto mx-auto md:mx-0"
+                className="object-contain drop-shadow-2xl w-full max-w-[250px] sm:max-w-[320px] md:max-w-[420px] h-auto mx-auto md:mx-0"
               />
             </div>
 
@@ -615,7 +615,7 @@ export default function Home() {
           <div className="flex justify-center gap-3 sm:gap-4 md:gap-6 mb-4 sm:mb-6 flex-wrap text-xs sm:text-sm">
             <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "عن شِهد" : "About"}</a>
             <Link href="/faq" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "اتصل بنا" : "Contact"}</Link>
-            <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الشروط والأحكام" : "Terms"}</a>
+            <Link href="/terms" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الشروط والأحكام" : "Terms"}</Link>
             <a href="#" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الخصوصية" : "Privacy"}</a>
             <Link href="/faq" className="text-white/80 hover:text-white transition font-oswald">{lang === "ar" ? "الأسئلة الشائعة" : "FAQ"}</Link>
           </div>
