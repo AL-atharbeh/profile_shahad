@@ -272,12 +272,12 @@ export default function Home() {
           </div>
 
           {/* Green Glow / Shadow exclusively behind the text */}
-          <div className="absolute flex items-center justify-end pointer-events-none w-full h-full px-4 sm:px-8 md:px-16">
+          <div className="absolute flex items-center justify-start pointer-events-none w-full h-full px-4 sm:px-8 md:px-16">
             <div className="w-[100%] sm:w-[70%] md:w-[50%] h-[90%] sm:h-[100%] bg-[#132c17]/80 md:bg-[#132c17]/70 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[100px]"></div>
           </div>
 
           {/* TEXT Overlay */}
-          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 space-y-3 sm:space-y-4 md:space-y-6 max-w-6xl mx-auto text-end flex flex-col items-end mt-4 sm:mt-0">
+          <div className="relative z-10 w-full px-6 sm:px-10 md:px-16 space-y-3 sm:space-y-4 md:space-y-6 max-w-6xl mx-auto text-start flex flex-col items-start mt-4 sm:mt-0">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_10px_rgba(19,44,23,0.8)] text-white">
               {t.title[lang]}
             </h1>
@@ -286,7 +286,7 @@ export default function Home() {
               {t.subtitle[lang]}
             </p>
             
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-end gap-3 w-full">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-start gap-3 w-full">
                <button className="px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#a1ae1c] to-[#c7d626] text-[#132c17] font-ibm-plex-arabic font-bold text-base sm:text-lg hover:shadow-[0_0_20px_rgba(161,174,28,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto mt-2">
                  {t.start[lang]}
                </button>
