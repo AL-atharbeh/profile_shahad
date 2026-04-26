@@ -256,42 +256,70 @@ export default function Home() {
         </div>
       </header>
 
-      {/* HERO SECTION */}
-      <section className="relative w-full h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <Image
-          src="/images/bannar.png"
-          alt="شِهد"
-          fill
-          className="object-cover transition-transform duration-700 hover:scale-105"
-          priority
-          quality={100}
-        />
+      {/* HERO SECTION - TABBY STYLE REPLICATED */}
+      <section className="relative w-full bg-[#003d2b] min-h-[550px] md:min-h-[650px] lg:min-h-[750px] flex items-center overflow-hidden">
         
-        {/* Subtle Gradient Overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-white/10" />
+        {/* Visual Component: Image placed on the left for RTL layout */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/bannar.png"
+            alt="Background"
+            fill
+            className="object-cover object-center md:object-left opacity-30 md:opacity-100"
+            priority
+            quality={100}
+          />
+          {/* Gradient Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-gradient-to-l from-[#003d2b] via-[#003d2b]/40 to-transparent hidden md:block" />
+          <div className="absolute inset-0 bg-[#003d2b]/60 md:hidden" />
+        </div>
 
-        {/* Content */}
-        <div className="relative z-10 w-full container mx-auto px-4 text-center">
-          <div className="space-y-6 sm:space-y-8 max-w-5xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic leading-tight text-black font-bold">
-              {t.title[lang]}
-            </h1>
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="flex flex-col md:flex-row items-center justify-end">
+            
+            {/* Text Content - Right Aligned (for RTL) and White */}
+            <div className="w-full md:w-3/5 text-right text-white space-y-6 md:space-y-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-ibm-plex-arabic font-bold leading-[1.1] drop-shadow-xl">
+                {t.title[lang]}
+              </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-800 max-w-4xl leading-relaxed font-federant mx-auto font-medium">
-              {t.subtitle[lang]}
-            </p>
+              <div className="max-w-2xl mr-0 ml-auto">
+                <p className="text-lg sm:text-xl md:text-2xl text-white/90 font-federant leading-relaxed drop-shadow-md">
+                  {t.subtitle[lang]}
+                </p>
+              </div>
 
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
-              <button className="px-8 py-3.5 rounded-full bg-[#4d6528] text-white font-ibm-plex-arabic font-bold hover:bg-[#5a7530] transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
-                {t.start[lang]}
-              </button>
-              <button className="px-8 py-3.5 rounded-full bg-white/80 backdrop-blur-sm border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic font-bold hover:bg-white transition-all shadow-lg transform hover:scale-105">
-                {t.merchant[lang]}
-              </button>
+              {/* Action Area: QR Code Box and CTAs */}
+              <div className="flex flex-col sm:flex-row items-center justify-end gap-6 pt-4 sm:pt-8">
+                
+                {/* Download App Card */}
+                <div className="group flex items-center gap-4 p-4 border border-white/30 rounded-2xl bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all cursor-pointer shadow-2xl">
+                  <div className="text-right">
+                    <p className="text-base sm:text-lg font-ibm-plex-arabic font-bold mb-1">{t.downloadApp[lang]}</p>
+                    <div className="flex items-center justify-end gap-1.5">
+                      <span className="text-yellow-400 text-xs">★★★★★</span>
+                      <span className="text-[10px] text-white/60 font-bold uppercase tracking-wider">Rating 4.8</span>
+                    </div>
+                  </div>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-xl p-1.5 shadow-inner flex shrink-0">
+                    <div className="w-full h-full bg-gray-50 rounded flex items-center justify-center border-2 border-dashed border-gray-200">
+                      <span className="text-[10px] text-gray-400 font-bold rotate-[-15deg]">QR ID</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button className="w-full sm:w-auto px-10 py-5 rounded-2xl bg-white text-[#003d2b] font-ibm-plex-arabic font-bold text-lg hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-all transform hover:-translate-y-1">
+                  {t.start[lang]}
+                </button>
+              </div>
             </div>
+
           </div>
         </div>
+
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -mr-16 -mt-16"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -ml-32 -mb-32"></div>
       </section>
 
       {/* HOW IT WORKS */}
