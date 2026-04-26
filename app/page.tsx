@@ -295,52 +295,84 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HOW IT WORKS */}
-      <section className="container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24 bg-gradient-to-b from-white to-[#f0fdf4]">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic text-black mb-8 sm:mb-12 md:mb-16 text-center">{t.hiw[lang]}</h2>
+      {/* HOW IT WORKS - REDESIGNED */}
+      <section className="py-16 sm:py-24 md:py-32 bg-white overflow-hidden" id="how-it-works">
+        <div className="container mx-auto px-4 sm:px-6 mb-12 sm:mb-20 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-ibm-plex-arabic text-[#132c17] font-bold">
+            {t.hiw[lang]}
+          </h2>
+          <div className="w-24 h-1.5 bg-gradient-to-r from-[#132c17] via-[#4d6528] to-[#a1ae1c] mx-auto mt-6 rounded-full"></div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+        <div className="space-y-12 sm:space-y-20 md:space-y-32">
 
-          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
-            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
-              <Image 
-                src="/images/pic1.png" 
-                alt={t.step1[lang]} 
-                fill 
-                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute top-3 right-3 w-8 h-8 bg-[#132c17] text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">1</div>
+          {/* STEP 1 */}
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 bg-[#f8faf7] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#132c17]/5 group">
+              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+                <Image 
+                  src="/images/pic1.png" 
+                  alt={t.step1[lang]} 
+                  fill 
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
+                <span className="text-5xl sm:text-7xl font-bold text-[#132c17]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">01</span>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#132c17] mb-4 sm:mb-6 font-bold leading-tight">
+                  {t.step1[lang]}
+                </h3>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                  {t.step1Desc[lang]}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-3 font-bold">{t.step1[lang]}</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step1Desc[lang]}</p>
           </div>
 
-          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
-            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
-              <Image 
-                src="/images/pic2.png" 
-                alt={t.step2[lang]} 
-                fill 
-                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute top-3 right-3 w-8 h-8 bg-[#4d6528] text-white rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">2</div>
+          {/* STEP 2 */}
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-0 bg-[#fdfcf5] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#4d6528]/5 group">
+              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+                <Image 
+                  src="/images/pic2.png" 
+                  alt={t.step2[lang]} 
+                  fill 
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
+                <span className="text-5xl sm:text-7xl font-bold text-[#4d6528]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">02</span>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#4d6528] mb-4 sm:mb-6 font-bold leading-tight">
+                  {t.step2[lang]}
+                </h3>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                  {t.step2Desc[lang]}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#4d6528] mb-3 font-bold">{t.step2[lang]}</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step2Desc[lang]}</p>
           </div>
 
-          <div className="group p-6 sm:p-8 border border-transparent bg-gradient-to-br from-[#132c17]/5 via-[#4d6528]/5 to-[#a1ae1c]/5 rounded-2xl sm:rounded-3xl shadow-sm hover:shadow-2xl transition-all duration-500 bg-white transform hover:-translate-y-2">
-            <div className="relative w-full aspect-video mb-6 overflow-hidden rounded-2xl bg-gray-50 border border-gray-100 shadow-inner">
-              <Image 
-                src="/images/pic3.png" 
-                alt={t.step3[lang]} 
-                fill 
-                className="object-contain p-2 group-hover:scale-110 transition-transform duration-700"
-              />
-              <div className="absolute top-3 right-3 w-8 h-8 bg-[#a1ae1c] text-[#132c17] rounded-lg flex items-center justify-center font-bold text-lg shadow-lg">3</div>
+          {/* STEP 3 */}
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 bg-[#fafaf5] rounded-[2rem] sm:rounded-[3rem] overflow-hidden shadow-2xl border border-[#a1ae1c]/5 group">
+              <div className="flex-1 relative h-[300px] sm:h-[400px] md:h-[550px] w-full overflow-hidden">
+                <Image 
+                  src="/images/pic3.png" 
+                  alt={t.step3[lang]} 
+                  fill 
+                  className="object-cover transform group-hover:scale-105 transition-transform duration-1000"
+                />
+              </div>
+              <div className="flex-1 p-8 sm:p-12 md:p-20 flex flex-col justify-center">
+                <span className="text-5xl sm:text-7xl font-bold text-[#132c17]/10 mb-4 sm:mb-6 font-ibm-plex-arabic">03</span>
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic text-[#132c17] mb-4 sm:mb-6 font-bold leading-tight">
+                  {t.step3[lang]}
+                </h3>
+                <p className="text-base sm:text-lg md:text-xl text-gray-600 font-federant leading-relaxed">
+                  {t.step3Desc[lang]}
+                </p>
+              </div>
             </div>
-            <h3 className="text-xl sm:text-2xl font-ibm-plex-arabic text-[#132c17] mb-3 font-bold">{t.step3[lang]}</h3>
-            <p className="text-sm sm:text-base text-gray-600 font-federant leading-relaxed">{t.step3Desc[lang]}</p>
           </div>
 
         </div>
