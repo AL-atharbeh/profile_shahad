@@ -35,7 +35,6 @@ export default function BusinessPage() {
       <header className="w-full bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm transition-all duration-300">
         <div className="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
           
-          {/* Logo/Branding */}
           <div className="flex items-center gap-6 sm:gap-8 md:gap-12">
             <Link href="/" className="cursor-pointer">
               <Image 
@@ -62,7 +61,6 @@ export default function BusinessPage() {
             </nav>
           </div>
 
-          {/* Actions */}
           <div className="flex items-center gap-2 sm:gap-3">
             <Link href="/download" className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#132c17] to-[#4d6528] text-white font-ibm-plex-arabic text-sm font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -82,12 +80,99 @@ export default function BusinessPage() {
         </div>
       </header>
 
-      {/* Hero Section ... */}
+      {/* HERO SECTION */}
       <section className="py-12 md:py-20 bg-[#fcfdfc]">
-        {/* ... Hero Content ... */}
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+            <div className="flex-1 space-y-6">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-ibm-plex-arabic font-bold leading-tight text-[#132c17]">
+                {t.heroTitle[lang]}
+              </h1>
+              <p className="text-base md:text-lg text-gray-600 font-federant leading-relaxed max-w-xl">
+                {t.heroDesc[lang]}
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <button className="px-8 py-3 bg-[#132c17] text-white rounded-xl font-bold text-base hover:bg-[#1d3f22] transition-all">
+                  {t.startNow[lang]}
+                </button>
+                <button className="px-8 py-3 border border-gray-200 text-[#132c17] rounded-xl font-bold text-base hover:bg-gray-50 transition-all">
+                  {lang === "ar" ? "تواصل معنا" : "Contact Sales"}
+                </button>
+              </div>
+            </div>
+            <div className="flex-1 w-full flex justify-center">
+               <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px]">
+                  <Image src="/images/97398349855.png" alt="Shahd Business" width={400} height={600} className="w-full h-auto object-contain drop-shadow-xl" />
+               </div>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ... Other Sections ... */}
+      {/* STATS SECTION */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[t.stat1, t.stat2, t.stat3].map((s, i) => (
+              <div key={i} className="p-8 border border-gray-100 rounded-3xl bg-gray-50 text-center">
+                 <div className="text-4xl md:text-5xl font-bold text-[#132c17] mb-2">{s.n}</div>
+                 <p className="text-sm text-gray-500 font-ibm-plex-arabic">{s.d[lang]}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FEATURES */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4">
+           <div className="flex flex-col md:flex-row items-center gap-12 mb-20 md:mb-28 max-w-5xl mx-auto">
+              <div className="flex-1">
+                 <Image src="/images/pay.png" alt="Payment" width={400} height={400} className="w-full max-w-[300px] h-auto mx-auto object-contain" />
+              </div>
+              <div className="flex-1 space-y-4">
+                 <h2 className="text-2xl md:text-3xl font-bold text-[#132c17]">{t.feature1Title[lang]}</h2>
+                 <p className="text-gray-600 leading-relaxed text-base md:text-lg">{t.feature1Desc[lang]}</p>
+              </div>
+           </div>
+           <div className="flex flex-col md:flex-row-reverse items-center gap-12 max-w-5xl mx-auto">
+              <div className="flex-1">
+                 <Image src="/images/shopshahed.png" alt="Grow" width={400} height={400} className="w-full max-w-[300px] h-auto mx-auto object-contain" />
+              </div>
+              <div className="flex-1 space-y-4">
+                 <h2 className="text-2xl md:text-3xl font-bold text-[#132c17]">{t.feature2Title[lang]}</h2>
+                 <p className="text-gray-600 leading-relaxed text-base md:text-lg">{t.feature2Desc[lang]}</p>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* CHANNELS */}
+      <section className="py-16 bg-[#fcfdfc] border-y border-gray-50">
+         <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl md:text-4xl font-bold mb-12">{t.sellAnywhere[lang]}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+               <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                  <div className="w-12 h-12 bg-[#132c17]/5 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#132c17]">
+                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                  </div>
+                  <h3 className="font-bold mb-2">{lang === "ar" ? "المتجر الإلكتروني" : "E-Commerce"}</h3>
+               </div>
+               <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                  <div className="w-12 h-12 bg-[#132c17]/5 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#132c17]">
+                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                  </div>
+                  <h3 className="font-bold mb-2">{lang === "ar" ? "نقاط البيع" : "POS Systems"}</h3>
+               </div>
+               <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm text-center">
+                  <div className="w-12 h-12 bg-[#132c17]/5 rounded-xl flex items-center justify-center mx-auto mb-4 text-[#132c17]">
+                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"/></svg>
+                  </div>
+                  <h3 className="font-bold mb-2">{lang === "ar" ? "روابط الدفع" : "Payment Links"}</h3>
+               </div>
+            </div>
+         </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="py-8 sm:py-10 md:py-12 text-center border-t border-gray-200 bg-gradient-to-b from-[#132c17] to-[#0f1c16] text-white">
@@ -120,6 +205,7 @@ export default function BusinessPage() {
           </p>
         </div>
       </footer>
+
     </main>
   );
 }
