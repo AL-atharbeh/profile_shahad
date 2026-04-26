@@ -265,19 +265,19 @@ export default function Home() {
               src="/images/bannar1.png"
               alt="شِهد"
               fill
-              className="object-contain object-center transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out"
+              className="object-contain object-left sm:object-left transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out"
               quality={100}
               priority
             />
           </div>
 
           {/* Green Glow / Shadow exclusively behind the text */}
-          <div className="absolute flex items-center justify-end pointer-events-none w-full h-full pl-10 pr-2 sm:pl-16 sm:pr-6 md:pl-28 md:pr-6">
+          <div className="absolute flex items-center justify-start pointer-events-none w-full h-full pr-10 pl-2 sm:pr-16 sm:pl-6 md:pr-28 md:pl-6">
             <div className="w-[100%] sm:w-[70%] md:w-[50%] h-[90%] sm:h-[100%] bg-[#132c17]/80 md:bg-[#132c17]/70 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[100px]"></div>
           </div>
 
           {/* TEXT Overlay */}
-          <div className="relative z-10 w-full pl-8 pr-4 sm:pl-12 sm:pr-8 md:pl-24 md:pr-10 space-y-3 sm:space-y-4 md:space-y-5 max-w-6xl mx-auto text-end flex flex-col items-end mt-4 sm:mt-0">
+          <div className="relative z-10 w-full pr-8 pl-4 sm:pr-12 sm:pl-8 md:pr-24 md:pl-10 space-y-3 sm:space-y-4 md:space-y-5 max-w-6xl mx-auto text-start flex flex-col items-start mt-4 sm:mt-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_10px_rgba(19,44,23,0.8)] text-white">
               {t.title[lang]}
             </h1>
@@ -286,7 +286,7 @@ export default function Home() {
               {t.subtitle[lang]}
             </p>
 
-            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-end gap-3 w-full">
+            <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-center justify-start gap-3 w-full">
               <button className="px-5 sm:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#a1ae1c] to-[#c7d626] text-[#132c17] font-ibm-plex-arabic font-bold text-sm sm:text-base hover:shadow-[0_0_20px_rgba(161,174,28,0.5)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto mt-2">
                 {t.start[lang]}
               </button>
