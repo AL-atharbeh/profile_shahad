@@ -344,34 +344,6 @@ export default function Home() {
                 </button>
               </div>
 
-              {/* Specific Download the app pill from reference */}
-              <div className="absolute bottom-10 right-10 hidden xl:flex items-center gap-4 animate-stagger-4 delay-500">
-                <div className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center gap-6 group cursor-pointer hover:bg-white/10 transition-all shadow-2xl">
-                  <span className="text-white font-ibm-plex-arabic font-bold tracking-widest text-[13px] uppercase">DOWNLOAD THE APP</span>
-                  <div className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:border-white transition-all">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                  </div>
-                </div>
-                {/* Decorative tag animation */}
-                <div className="relative animate-float-slow opacity-40">
-                   <svg className="w-14 h-14 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 2.4L3 10.8V21h10.2l8.4-8.4L11.4 2.4zM7 15c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
-                </div>
-              </div>
-            </div>
-
-            {/* Premium Floating Badge (Desktop Only) */}
-            <div className={`absolute top-1/4 ${lang === 'ar' ? 'left-1/4' : 'right-1/4'} hidden lg:block animate-float-slow`}>
-              <div className="hero-glass p-6 rounded-[2rem] border border-white/10 shadow-2xl">
-                <div className="flex items-center gap-5">
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-400/30">
-                    <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                  </div>
-                  <div>
-                    <p className="text-white font-bold text-lg">{lang === "ar" ? "موافقة فورية" : "Instant Approval"}</p>
-                    <p className="text-white/50 text-sm">{lang === "ar" ? "خلال أقل من 60 ثانية" : "In less than 60 seconds"}</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
