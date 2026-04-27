@@ -265,24 +265,24 @@ export default function Home() {
               src="/images/bannar1.png"
               alt="شِهد"
               fill
-              className="object-contain object-left sm:object-left transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out"
+              className="object-cover lg:object-contain object-[25%_center] lg:object-left transform group-hover:scale-[1.02] transition-transform duration-700 ease-in-out"
               quality={100}
               priority
             />
           </div>
 
           {/* Green Glow / Shadow exclusively behind the text */}
-          <div className="absolute flex items-center justify-start pointer-events-none w-full h-full pr-10 pl-2 sm:pr-16 sm:pl-6 md:pr-28 md:pl-6">
-            <div className="w-[100%] sm:w-[70%] md:w-[50%] h-[90%] sm:h-[100%] bg-[#132c17]/80 md:bg-[#132c17]/70 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[100px]"></div>
+          <div className={`absolute flex items-center ${lang === "ar" ? "justify-start" : "justify-end"} pointer-events-none w-full h-full pr-4 sm:pr-16 sm:pl-6 md:pr-28 md:pl-6`}>
+            <div className="w-[100%] sm:w-[70%] md:w-[55%] h-[100%] bg-[#132c17]/60 md:bg-[#132c17]/70 blur-[40px] sm:blur-[60px] md:blur-[80px] rounded-[100px]"></div>
           </div>
 
           {/* TEXT Overlay */}
-          <div className="relative z-10 w-full pr-8 pl-4 sm:pr-12 sm:pl-8 md:pr-24 md:pl-10 space-y-3 sm:space-y-4 md:space-y-5 max-w-6xl mx-auto text-start flex flex-col items-start mt-4 sm:mt-0">
+          <div className="relative z-10 w-full px-6 sm:pr-12 sm:pl-8 md:pr-24 md:pl-10 space-y-3 sm:space-y-4 md:space-y-5 max-w-6xl mx-auto text-start flex flex-col items-start mt-8 sm:mt-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-ibm-plex-arabic leading-tight font-bold drop-shadow-[0_4px_10px_rgba(19,44,23,0.8)] text-white">
               {t.title[lang]}
             </h1>
 
-            <p className="text-sm sm:text-base md:text-lg text-white leading-relaxed font-federant max-w-sm md:max-w-lg drop-shadow-[0_4px_8px_rgba(19,44,23,0.8)]">
+            <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed font-federant max-w-xs sm:max-w-sm md:max-w-lg drop-shadow-[0_4px_8px_rgba(19,44,23,0.8)]">
               {t.subtitle[lang]}
             </p>
 
