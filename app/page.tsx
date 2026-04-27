@@ -445,37 +445,43 @@ export default function Home() {
       </section>
 
       {/* ═══ INSTALLMENT CALCULATOR ═══ */}
-      <section className="relative py-20 sm:py-32 bg-emerald-950 overflow-hidden" ref={calcReveal.ref}>
+      <section className="relative py-12 sm:py-16 bg-emerald-950 overflow-hidden" ref={calcReveal.ref}>
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10l.38.38L30.38 35.0l-.38-.38L54.62 10zM10.5 34.5l.5.5L35.5 10.5l-.5-.5L10.5 34.5z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E")` }} />
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[150px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-emerald-400/10 rounded-full blur-[120px]" />
 
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="container mx-auto px-6 max-w-5xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* Right Side: Title */}
             <div className={`text-center lg:text-right order-2 lg:order-2 ${calcReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
                 {lang === "ar" ? "كيف شِهد تشتغل؟" : "How does Shahd work?"}
               </h2>
-              <p className="text-2xl md:text-3xl text-emerald-400 font-bold">
+              <p className="text-xl md:text-2xl text-emerald-400 font-bold">
                 {lang === "ar" ? "جرّبها بنفسك." : "Try it yourself."}
               </p>
             </div>
 
             {/* Left Side: Interactive Calculator */}
-            <div className={`order-1 lg:order-1 ${calcReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-              <div className="bg-[#0c1f17] rounded-[2.5rem] p-8 md:p-10 border border-white/10 shadow-[0_30px_80px_rgba(0,0,0,0.5)]">
+            <div className={`order-1 lg:order-1 max-w-md mx-auto lg:mx-0 w-full ${calcReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+              <div className="bg-[#0c1f17] rounded-[2rem] p-6 md:p-8 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
                 {/* Amount Header */}
-                <div className="text-center mb-8">
-                  <p className="text-white/50 text-sm font-bold mb-2 uppercase tracking-wider">{lang === "ar" ? "حدد المبلغ" : "Select Amount"}</p>
-                  <div className="text-5xl md:text-6xl font-bold text-white">
+                <div className="text-center mb-6">
+                  <p className="text-white/50 text-xs font-bold mb-1 uppercase tracking-wider">{lang === "ar" ? "حدد المبلغ" : "Select Amount"}</p>
+                  <div className="text-4xl md:text-5xl font-bold text-white">
                     {lang === "ar" ? `د.أ ${sliderAmount}` : `JD ${sliderAmount}`}
                   </div>
                 </div>
 
                 {/* Slider */}
-                <div className="relative mb-10 px-1">
+                <div className="relative mb-8">
+                  <style>{`
+                    .calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; outline: none; cursor: pointer; }
+                    .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: white; border: 3px solid #10b981; cursor: pointer; box-shadow: 0 0 12px rgba(16,185,129,0.5); transition: transform 0.2s; margin-top: -8px; }
+                    .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
+                    .calc-slider::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; }
+                    .calc-slider::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: white; border: 3px solid #10b981; cursor: pointer; box-shadow: 0 0 12px rgba(16,185,129,0.5); }
+                    .calc-slider::-moz-range-track { height: 6px; border-radius: 999px; }
+                  `}</style>
                   <input
                     type="range"
                     min={50}
@@ -483,28 +489,10 @@ export default function Home() {
                     step={10}
                     value={sliderAmount}
                     onChange={(e) => setSliderAmount(Number(e.target.value))}
-                    className="w-full h-2 rounded-full appearance-none cursor-pointer bg-white/10
-                      [&::-webkit-slider-thumb]:appearance-none
-                      [&::-webkit-slider-thumb]:w-6
-                      [&::-webkit-slider-thumb]:h-6
-                      [&::-webkit-slider-thumb]:rounded-full
-                      [&::-webkit-slider-thumb]:bg-white
-                      [&::-webkit-slider-thumb]:shadow-[0_0_20px_rgba(255,255,255,0.4)]
-                      [&::-webkit-slider-thumb]:cursor-pointer
-                      [&::-webkit-slider-thumb]:border-4
-                      [&::-webkit-slider-thumb]:border-emerald-500
-                      [&::-webkit-slider-thumb]:transition-all
-                      [&::-webkit-slider-thumb]:hover:scale-125
-                      [&::-moz-range-thumb]:w-6
-                      [&::-moz-range-thumb]:h-6
-                      [&::-moz-range-thumb]:rounded-full
-                      [&::-moz-range-thumb]:bg-white
-                      [&::-moz-range-thumb]:border-4
-                      [&::-moz-range-thumb]:border-emerald-500
-                      [&::-moz-range-thumb]:cursor-pointer"
-                    style={{ background: `linear-gradient(to right, #10b981 0%, #10b981 ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.1) ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.1) 100%)` }}
+                    className="calc-slider"
+                    style={{ background: `linear-gradient(to right, #10b981 0%, #10b981 ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.08) ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.08) 100%)` }}
                   />
-                  <div className="flex justify-between mt-3 text-xs text-white/30 font-bold">
+                  <div className="flex justify-between mt-2 text-[10px] text-white/25 font-bold">
                     <span>{lang === "ar" ? "د.أ 50" : "JD 50"}</span>
                     <span>{lang === "ar" ? "د.أ 2,000" : "JD 2,000"}</span>
                   </div>
@@ -513,40 +501,30 @@ export default function Home() {
                 {/* Installment Timeline */}
                 <div className="space-y-0">
                   {[0, 1, 2, 3].map((i) => (
-                    <div key={i} className="relative">
-                      <div className={`flex items-center justify-between py-4 ${i < 3 ? 'border-b border-white/5' : ''}`}>
-                        <div className="flex items-center gap-4">
-                          <div className="relative flex flex-col items-center">
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${i === 0 ? 'bg-emerald-500 text-white' : 'bg-white/10 text-white/60'}`}>
-                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            </div>
-                          </div>
-                          <div>
-                            <p className="text-white font-bold text-sm">
-                              {i === 0
-                                ? (lang === "ar" ? "اليوم" : "Today")
-                                : (lang === "ar" ? `بعد ${i * 30} يوم` : `${i * 30} days later`)}
-                            </p>
-                          </div>
+                    <div key={i} className={`flex items-center justify-between py-3 ${i < 3 ? 'border-b border-white/5' : ''}`}>
+                      <div className="flex items-center gap-3">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center ${i === 0 ? 'bg-emerald-500 text-white' : 'bg-white/10 text-white/50'}`}>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                         </div>
-                        <div className="text-white font-bold text-lg">
-                          {lang === "ar"
-                            ? `د.أ ${(sliderAmount / 4).toFixed(3)}`
-                            : `JD ${(sliderAmount / 4).toFixed(3)}`}
-                        </div>
+                        <p className="text-white font-bold text-xs">
+                          {i === 0
+                            ? (lang === "ar" ? "اليوم" : "Today")
+                            : (lang === "ar" ? `بعد ${i * 30} يوم` : `${i * 30} days later`)}
+                        </p>
                       </div>
-                      {/* Connecting line */}
-                      {i < 3 && (
-                        <div className={`absolute ${lang === 'ar' ? 'right-[19px]' : 'left-[19px]'} top-[52px] w-[2px] h-4 bg-white/10`} />
-                      )}
+                      <div className="text-white font-bold text-sm">
+                        {lang === "ar"
+                          ? `د.أ ${(sliderAmount / 4).toFixed(3)}`
+                          : `JD ${(sliderAmount / 4).toFixed(3)}`}
+                      </div>
                     </div>
                   ))}
                 </div>
 
                 {/* Footer */}
-                <div className="mt-8 pt-6 border-t border-white/10 flex items-center justify-between">
-                  <span className="text-emerald-400 font-bold text-lg">{lang === "ar" ? "فوائد 0%" : "0% Interest"}</span>
-                  <span className="text-white font-bold text-xl">
+                <div className="mt-5 pt-4 border-t border-white/10 flex items-center justify-between">
+                  <span className="text-emerald-400 font-bold text-sm">{lang === "ar" ? "فوائد 0%" : "0% Interest"}</span>
+                  <span className="text-white font-bold text-base">
                     {lang === "ar"
                       ? `د.أ ${sliderAmount.toFixed(3)}`
                       : `JD ${sliderAmount.toFixed(3)}`}
@@ -558,6 +536,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
 
       <section className="relative py-16 sm:py-24 overflow-hidden" ref={cardReveal.ref}>
