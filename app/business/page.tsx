@@ -110,39 +110,71 @@ export default function BusinessPage() {
             </header>
 
             {/* ═══ HERO SECTION ═══ */}
-            <section className="relative w-full pt-28 sm:pt-36 pb-16 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>
-                <div className="blob-emerald w-[500px] h-[500px] -top-20 -right-40 opacity-20" />
-                
-                <div className="container mx-auto max-w-7xl relative">
-                    <div className="relative overflow-hidden rounded-[2.5rem] shadow-premium bg-emerald-950 min-h-[500px] md:min-h-[600px] group">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#064e3b] via-[#022c22] to-black" />
-                        
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center p-8 md:p-20">
-                            {/* Left Side: Content */}
-                            <div className={`${lang === "ar" ? "text-right" : "text-left"}`}>
-                                <div className={`inline-block px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-bold mb-6 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                                    {lang === "ar" ? "حلول التجار" : "Merchant Solutions"}
-                                </div>
-                                <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                                    {t.title[lang]}
-                                </h1>
-                                <p className={`text-lg md:text-xl text-white/70 leading-relaxed mb-10 max-w-xl animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                                    {t.subtitle[lang]}
-                                </p>
-                                <div className={`flex flex-wrap gap-5 animate-stagger-4 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                                    <button className="btn-premium-gold px-12 py-4.5 rounded-2xl font-bold text-lg shadow-2xl">
-                                        {lang === "ar" ? "انضم كشريك" : "Join as Partner"}
-                                    </button>
-                                    <button className="px-10 py-4.5 rounded-2xl border border-white/20 text-white font-bold text-lg hover:bg-white/5 transition-all">
-                                        {lang === "ar" ? "تواصل معنا" : "Contact Us"}
-                                    </button>
-                                </div>
-                            </div>
+            <section className="relative w-full pt-28 sm:pt-40 pb-20 px-4 sm:px-6 overflow-hidden min-h-[90vh] flex items-center" ref={heroReveal.ref}>
+                {/* Mesh Gradient Background */}
+                <div className="absolute inset-0 bg-[#064e3b]" />
+                <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_30%,#10b981_0%,transparent_50%),radial-gradient(circle_at_80%_70%,#065f46_0%,transparent_50%)]" />
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10l.38.38L30.38 35.0l-.38-.38L54.62 10zM10.5 34.5l.5.5L35.5 10.5l-.5-.5L10.5 34.5z' fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")` }} />
 
-                            {/* Right Side: Image Overlay */}
-                            <div className={`relative flex justify-center ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                                <div className="relative w-full max-w-[380px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)]">
-                                    <Image src="/images/97398349855.png" alt="Business App" width={600} height={800} className="w-full h-auto animate-float-slow" priority />
+                <div className="container mx-auto max-w-7xl relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                        
+                        {/* Left Side: Content (7 columns) */}
+                        <div className={`lg:col-span-7 ${lang === "ar" ? "text-right" : "text-left"}`}>
+                            <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                                <span className="relative flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                </span>
+                                <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{lang === "ar" ? "انضم لرواد التجارة" : "Join the Elite"}</span>
+                            </div>
+                            
+                            <h1 className={`text-4xl md:text-6xl lg:text-8xl font-bold text-white mb-8 leading-[1.1] animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                                {t.title[lang]}
+                            </h1>
+                            
+                            <p className={`text-lg md:text-2xl text-white/70 leading-relaxed mb-12 max-w-2xl font-ibm-plex-arabic animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                                {t.subtitle[lang]}
+                            </p>
+                            
+                            <div className={`flex flex-wrap gap-6 animate-stagger-4 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                                <button className="btn-premium-gold px-14 py-5 rounded-2xl font-bold text-xl shadow-[0_20px_50px_rgba(245,158,11,0.3)] hover:scale-105 active:scale-95 transition-all">
+                                    {lang === "ar" ? "ابدأ كشريك" : "Partner with Us"}
+                                </button>
+                                <button className="group px-10 py-5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg hover:bg-white/20 transition-all flex items-center gap-3">
+                                    {lang === "ar" ? "تواصل معنا" : "Contact Sales"}
+                                    <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Right Side: Layered Ecosystem Composition (5 columns) */}
+                        <div className={`lg:col-span-5 relative hidden lg:block ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className="relative w-full aspect-square">
+                                {/* Base Dash Component */}
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/10 rounded-[3rem] blur-3xl" />
+                                
+                                {/* Main App Screen */}
+                                <div className="absolute top-0 right-0 w-[80%] drop-shadow-[0_40px_80px_rgba(0,0,0,0.4)] animate-float-slow">
+                                    <Image src="/images/97398349855.png" alt="Merchant Dashboard" width={800} height={1000} className="w-full h-auto rounded-[3rem]" priority />
+                                </div>
+                                
+                                {/* Floating Metric Card 1 */}
+                                <div className="absolute -bottom-4 -left-10 glass-card p-6 rounded-[2rem] border border-white/20 shadow-2xl animate-stagger-5 delay-500 max-w-[220px]">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white">
+                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                        </div>
+                                        <span className="text-white font-bold text-xs">Growth</span>
+                                    </div>
+                                    <div className="text-2xl font-bold text-white">+142%</div>
+                                    <div className="text-[10px] text-white/50 uppercase tracking-tighter">Avg Sales Boost</div>
+                                </div>
+
+                                {/* Floating Metric Card 2 */}
+                                <div className="absolute top-20 -left-20 glass-card p-5 rounded-[1.5rem] border border-white/20 shadow-2xl animate-stagger-6 delay-700 max-w-[180px]">
+                                    <div className="text-emerald-400 font-bold mb-1">99.9%</div>
+                                    <div className="text-[10px] text-white/70">Success Rate</div>
                                 </div>
                             </div>
                         </div>
