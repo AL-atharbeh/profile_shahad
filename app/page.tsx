@@ -248,7 +248,7 @@ export default function Home() {
             {/* Mobile Menu Button - Premium Animated Version */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl bg-gray-50 hover:bg-gray-100 transition-all duration-300 z-50 overflow-hidden"
+              className={`lg:hidden relative w-10 h-10 flex items-center justify-center rounded-xl transition-all duration-300 z-[101] overflow-hidden ${isMenuOpen ? 'bg-transparent' : 'bg-gray-50'}`}
               aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
             >
               <div className="flex flex-col gap-1.5 items-center justify-center w-6">
@@ -260,66 +260,68 @@ export default function Home() {
 
           </div>
         </div>
+      </header>
 
-        {/* Improved Mobile Menu Overlay - Full Screen Glassmorphism */}
-        <div 
-          className={`lg:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-            isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'
-          }`}
-        >
-          <div className="flex flex-col h-full pt-24 pb-8 px-6 overflow-y-auto">
-            <nav className="flex flex-col gap-2 font-ibm-plex-arabic text-right mb-12">
-              <a 
-                onClick={() => setIsMenuOpen(false)} 
-                className="text-3xl font-bold text-[#132c17] py-4 border-b border-gray-100/50 active:scale-95 transition-all"
-              >
-                {lang === "ar" ? "الرئيسية" : "Home"}
-              </a>
-              <Link 
-                href="/how-it-works" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="text-3xl font-bold text-[#132c17] py-4 border-b border-gray-100/50 active:scale-95 transition-all"
-              >
-                {lang === "ar" ? "كيف يعمل" : "How It Works"}
-              </Link>
-              <Link 
-                href="/business" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="text-3xl font-bold text-[#132c17] py-4 border-b border-gray-100/50 active:scale-95 transition-all"
-              >
-                {lang === "ar" ? "للأعمال" : "For Business"}
-              </Link>
-            </nav>
+      {/* Improved Mobile Menu Overlay - Outside Header for correct z-index */}
+      <div 
+        className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+      >
+        <div className="flex flex-col h-full pt-28 pb-10 px-8 overflow-y-auto">
+          {/* Menu Items */}
+          <nav className="flex flex-col gap-4 font-ibm-plex-arabic text-right mb-10">
+            <a 
+              onClick={() => setIsMenuOpen(false)} 
+              className="text-4xl font-bold text-[#132c17] py-4 border-b border-gray-50 active:text-[#4d6528] transition-colors"
+            >
+              {lang === "ar" ? "الرئيسية" : "Home"}
+            </a>
+            <Link 
+              href="/how-it-works" 
+              onClick={() => setIsMenuOpen(false)} 
+              className="text-4xl font-bold text-[#132c17] py-4 border-b border-gray-50 active:text-[#4d6528] transition-colors"
+            >
+              {lang === "ar" ? "كيف يعمل" : "How It Works"}
+            </Link>
+            <Link 
+              href="/business" 
+              onClick={() => setIsMenuOpen(false)} 
+              className="text-4xl font-bold text-[#132c17] py-4 border-b border-gray-50 active:text-[#4d6528] transition-colors"
+            >
+              {lang === "ar" ? "للأعمال" : "For Business"}
+            </Link>
+          </nav>
 
-            <div className="flex flex-col gap-4 mt-auto">
-              <button className="w-full py-4.5 rounded-2xl bg-[#4d6528] text-white font-ibm-plex-arabic text-lg font-bold shadow-xl hover:shadow-[#4d6528]/20 transition-all active:scale-95">
-                {t.businessLogin[lang]}
-              </button>
-              <Link 
-                href="/download" 
-                onClick={() => setIsMenuOpen(false)} 
-                className="w-full py-4.5 rounded-2xl border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic text-lg font-bold text-center active:scale-95 transition-all"
-              >
-                {t.downloadApp[lang]}
-              </Link>
-              
-              <button
-                onClick={() => { setLang(lang === "ar" ? "en" : "ar"); setIsMenuOpen(false); }}
-                className="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-gray-50 font-ibm-plex-arabic font-bold text-gray-700 active:scale-95 transition-all mt-4"
-              >
-                <span className="text-lg">{lang === "ar" ? "English Version" : "النسخة العربية"}</span>
-                <span className="text-2xl">{lang === "ar" ? "🇬🇧" : "🇯🇴"}</span>
-              </button>
-            </div>
+          {/* Action Buttons */}
+          <div className="flex flex-col gap-4 mt-auto">
+            <button className="w-full py-5 rounded-3xl bg-[#4d6528] text-white font-ibm-plex-arabic text-xl font-bold shadow-2xl active:scale-95 transition-all">
+              {t.businessLogin[lang]}
+            </button>
+            <Link 
+              href="/download" 
+              onClick={() => setIsMenuOpen(false)} 
+              className="w-full py-5 rounded-3xl border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic text-xl font-bold text-center active:scale-95 transition-all"
+            >
+              {t.downloadApp[lang]}
+            </Link>
+            
+            <button
+              onClick={() => { setLang(lang === "ar" ? "en" : "ar"); setIsMenuOpen(false); }}
+              className="flex items-center justify-between w-full px-8 py-5 rounded-3xl bg-gray-50 font-ibm-plex-arabic font-bold text-gray-700 active:scale-95 transition-all mt-4"
+            >
+              <span className="text-xl">{lang === "ar" ? "English Version" : "النسخة العربية"}</span>
+              <span className="text-3xl">{lang === "ar" ? "🇬🇧" : "🇯🇴"}</span>
+            </button>
+          </div>
 
-            {/* Social Icons in Mobile Menu */}
-            <div className="flex justify-center gap-8 mt-12 py-6">
-              <a href="#" className="text-gray-400 hover:text-[#4d6528] transition-colors"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg></a>
-              <a href="#" className="text-gray-400 hover:text-[#4d6528] transition-colors"><svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg></a>
-            </div>
+          {/* Footer Socials */}
+          <div className="flex justify-center gap-10 mt-12 py-6">
+            <a href="#" className="text-gray-300 hover:text-[#4d6528] transition-colors"><svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg></a>
+            <a href="#" className="text-gray-300 hover:text-[#4d6528] transition-colors"><svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" /></svg></a>
           </div>
         </div>
-      </header>
+      </div>
 
       {/* HERO SECTION */}
       <section className="relative w-full pb-8 pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6">
