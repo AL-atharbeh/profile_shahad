@@ -9,6 +9,7 @@ export default function Home() {
   const [lang, setLang] = useState<Lang>("ar");
   const [showButton, setShowButton] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -245,14 +246,57 @@ export default function Home() {
             </button>
 
             {/* Mobile Menu Button */}
-            <button className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
-              <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors z-50"
+              aria-label="Toggle Menu"
+            >
+              {isMenuOpen ? (
+                <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
 
           </div>
 
+        </div>
+
+        {/* Mobile menu overlay */}
+        <div className={`lg:hidden fixed inset-0 z-40 bg-white/98 backdrop-blur-xl transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+          <div className="flex flex-col items-center justify-center h-full gap-8 p-6">
+            <nav className="flex flex-col items-center gap-6 font-ibm-plex-arabic font-bold text-center">
+              <a onClick={() => setIsMenuOpen(false)} className="text-2xl text-gray-800 hover:text-gray-900 transition-colors">
+                {lang === "ar" ? "الرئيسية" : "Home"}
+              </a>
+              <Link href="/how-it-works" onClick={() => setIsMenuOpen(false)} className="text-2xl text-gray-800 hover:text-gray-900 transition-colors">
+                {lang === "ar" ? "كيف يعمل" : "How It Works"}
+              </Link>
+              <Link href="/business" onClick={() => setIsMenuOpen(false)} className="text-2xl text-gray-800 hover:text-gray-900 transition-colors">
+                {lang === "ar" ? "للأعمال" : "For Business"}
+              </Link>
+            </nav>
+
+            <div className="flex flex-col items-center gap-4 w-full max-w-xs mt-4">
+              <button className="w-full py-4 rounded-xl bg-[#4d6528] text-white font-ibm-plex-arabic text-lg font-bold shadow-lg">
+                {t.businessLogin[lang]}
+              </button>
+              <Link href="/download" onClick={() => setIsMenuOpen(false)} className="w-full py-4 rounded-xl border-2 border-[#4d6528] text-[#4d6528] font-ibm-plex-arabic text-lg font-bold text-center">
+                {t.downloadApp[lang]}
+              </Link>
+            </div>
+            
+            <button
+              onClick={() => { setLang(lang === "ar" ? "en" : "ar"); setIsMenuOpen(false); }}
+              className="mt-4 flex items-center gap-3 px-6 py-3 rounded-xl bg-gray-100 font-ibm-plex-arabic font-bold text-gray-700"
+            >
+              <span>{lang === "ar" ? "🇬🇧 English" : "🇯🇴 عربي"}</span>
+            </button>
+          </div>
         </div>
       </header>
 
