@@ -187,11 +187,16 @@ export default function Home() {
               { label: lang === "ar" ? "الرئيسية" : "Home", href: "/" },
               { label: lang === "ar" ? "كيف يعمل" : "How It Works", href: "/how-it-works" },
               { label: lang === "ar" ? "للأعمال" : "For Business", href: "/business" },
+            {[
+              { label: lang === "ar" ? "الرئيسية" : "Home", href: "/" },
+              { label: lang === "ar" ? "كيف يعمل" : "How It Works", href: "/how-it-works" },
+              { label: lang === "ar" ? "للأعمال" : "For Business", href: "/business" },
             ].map((item, i) => (
               <Link
                 key={i}
                 href={item.href}
-                className="relative px-5 py-2.5 rounded-xl text-[#0a1f10] hover:text-emerald-700 font-semibold text-[15px] transition-all duration-300 group cursor-pointer"
+                className={`relative px-5 py-2.5 rounded-xl text-[#0a1f10] hover:text-emerald-700 font-semibold text-[15px] transition-all duration-300 group cursor-pointer animate-fade-in-down`}
+                style={{ animationDelay: `${i * 100}ms` }}
               >
                 {item.label}
                 <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-300 group-hover:w-3/4" />
@@ -286,65 +291,91 @@ export default function Home() {
       </div>
 
       {/* ═══ HERO SECTION ═══ */}
-      <section className="relative w-full pt-20 sm:pt-24 pb-8 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>
-        {/* Decorative floating blobs */}
-        <div className="blob-emerald w-[500px] h-[500px] -top-40 -right-40 animate-morph-blob" />
-        <div className="blob-accent w-[300px] h-[300px] bottom-0 left-0 animate-morph-blob" style={{ animationDelay: '4s' }} />
-
+      <section className="relative w-full pt-20 sm:pt-24 pb-12 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>
+        {/* Decorative elements */}
+        <div className="blob-emerald w-[500px] h-[500px] -top-20 -left-20 animate-morph-blob opacity-20" />
+        
         <div className="container mx-auto max-w-7xl relative">
-          <div className="relative overflow-hidden rounded-[2rem] sm:rounded-[2.5rem] shadow-elevated group min-h-[420px] sm:min-h-[480px] md:min-h-[520px]">
+          <div className="relative overflow-hidden rounded-[2.5rem] shadow-premium group min-h-[500px] md:min-h-[600px] lg:min-h-[650px] bg-emerald-950">
             {/* Background Image */}
             <div className="absolute inset-0 w-full h-full">
               <Image
                 src="/images/bannar1.png"
                 alt="شِهد"
                 fill
-                className="object-cover lg:object-contain object-[25%_center] lg:object-left transform group-hover:scale-[1.03] transition-transform duration-[1200ms] ease-out"
+                className="object-cover object-[center_center] transform scale-105 transition-transform duration-[3000ms] group-hover:scale-100"
                 quality={100}
                 priority
               />
-              {/* Gradient overlay for readability */}
+              {/* Gradient overlay optimized for text clarity */}
               <div className={`absolute inset-0 ${
                 lang === "ar"
-                  ? "bg-gradient-to-l from-[#052e16]/90 via-[#052e16]/70 to-transparent"
-                  : "bg-gradient-to-r from-[#052e16]/90 via-[#052e16]/70 to-transparent"
+                  ? "bg-gradient-to-l from-emerald-950 via-emerald-950/40 to-transparent"
+                  : "bg-gradient-to-r from-emerald-950 via-emerald-950/40 to-transparent"
               }`} />
             </div>
 
-            {/* Decorative grid pattern */}
-            <div className="absolute inset-0 opacity-[0.03]" style={{
-              backgroundImage: `radial-gradient(circle, #ffffff 1px, transparent 1px)`,
-              backgroundSize: '30px 30px'
-            }} />
-
-            {/* Hero Text */}
-            <div className={`relative z-10 w-full px-8 sm:px-12 md:px-20 py-16 sm:py-20 md:py-24 flex flex-col gap-5 max-w-2xl ${
-              lang === "ar" ? "mr-auto items-start text-start" : "ml-auto items-start text-start"
+            {/* Hero Text Content */}
+            <div className={`relative z-10 h-full w-full flex flex-col justify-center px-8 sm:px-16 md:px-24 py-20 max-w-3xl ${
+              lang === "ar" ? "mr-0 items-start text-start" : "ml-0 items-start text-start"
             }`}>
               {/* Badge */}
-              <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 ${heroReveal.isVisible ? 'animate-fade-in-down' : 'opacity-0'}`}>
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse-ring" />
-                <span className="text-sm text-white/90 font-ibm-plex-arabic">
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-xs sm:text-sm text-white font-ibm-plex-arabic font-semibold uppercase tracking-wider">
                   {lang === "ar" ? "متوافق مع الشريعة الإسلامية" : "Sharia Compliant"}
                 </span>
               </div>
 
-              <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] font-ibm-plex-arabic leading-[1.2] font-bold text-white ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                {t.title[lang]}
+              <h1 className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-ibm-plex-arabic leading-[1.1] font-bold text-white mb-8 animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                {lang === "ar" ? (
+                  <>قسّطها على رواق — <span className="gold-gradient-text italic">مع شِهد</span></>
+                ) : (
+                  <>Install on Ease — <span className="gold-gradient-text italic">With Shahd</span></>
+                )}
               </h1>
 
-              <p className={`text-base sm:text-lg md:text-xl text-white/85 leading-relaxed max-w-lg ${heroReveal.isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
+              <p className={`text-lg sm:text-xl text-white/80 leading-relaxed mb-12 max-w-xl animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                 {t.subtitle[lang]}
               </p>
 
-              <div className={`flex flex-col sm:flex-row items-center gap-3 pt-2 w-full sm:w-auto ${heroReveal.isVisible ? 'animate-fade-in-up delay-400' : 'opacity-0'}`}>
-                <button className="relative overflow-hidden px-8 py-3.5 rounded-2xl bg-white text-[#0a1f10] font-ibm-plex-arabic font-bold text-base hover:shadow-[0_8px_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto cursor-pointer group">
-                  <span className="relative z-10">{t.start[lang]}</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 to-emerald-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className={`flex flex-col sm:flex-row items-center gap-4 animate-stagger-4 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
+                <button className="btn-premium-gold px-12 py-4.5 rounded-2xl font-ibm-plex-arabic font-bold text-lg w-full sm:w-auto shadow-2xl">
+                  {t.start[lang]}
                 </button>
-                <button className="px-8 py-3.5 rounded-2xl border-2 border-white/30 text-white font-ibm-plex-arabic font-bold text-base hover:bg-white/10 hover:border-white/50 transition-all duration-300 w-full sm:w-auto cursor-pointer backdrop-blur-sm">
-                  {t.merchant[lang]}
+                <button className="px-12 py-4.5 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 text-white font-ibm-plex-arabic font-bold text-lg hover:bg-white/20 transition-all w-full sm:w-auto">
+                  {lang === "ar" ? "انضم كتاجر" : "Join as Merchant"}
                 </button>
+              </div>
+
+              {/* Specific Download the app pill from reference */}
+              <div className="absolute bottom-10 right-10 hidden xl:flex items-center gap-4 animate-stagger-4 delay-500">
+                <div className="px-8 py-4 rounded-full border border-white/20 bg-white/5 backdrop-blur-xl flex items-center gap-6 group cursor-pointer hover:bg-white/10 transition-all shadow-2xl">
+                  <span className="text-white font-ibm-plex-arabic font-bold tracking-widest text-[13px] uppercase">DOWNLOAD THE APP</span>
+                  <div className="w-10 h-10 rounded-full border-2 border-white/30 flex items-center justify-center group-hover:scale-110 group-hover:border-white transition-all">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  </div>
+                </div>
+                {/* Decorative tag animation */}
+                <div className="relative animate-float-slow opacity-40">
+                   <svg className="w-14 h-14 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 2.4L3 10.8V21h10.2l8.4-8.4L11.4 2.4zM7 15c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+                </div>
+              </div>
+            </div>
+            </div>
+
+            {/* Premium Floating Badge (Desktop Only) */}
+            <div className={`absolute top-1/4 ${lang === 'ar' ? 'left-1/4' : 'right-1/4'} hidden lg:block animate-float-slow`}>
+              <div className="hero-glass p-6 rounded-[2rem] border border-white/10 shadow-2xl">
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-400/30">
+                    <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  </div>
+                  <div>
+                    <p className="text-white font-bold text-lg">{lang === "ar" ? "موافقة فورية" : "Instant Approval"}</p>
+                    <p className="text-white/50 text-sm">{lang === "ar" ? "خلال أقل من 60 ثانية" : "In less than 60 seconds"}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -363,7 +394,9 @@ export default function Home() {
                 { num: `${userCount}K+`, label: lang === "ar" ? "مستخدم" : "Users" },
                 { num: `${satisfactionCount}%`, label: lang === "ar" ? "رضا العملاء" : "Satisfaction" },
               ].map((stat, i) => (
-                <div key={i} className="text-center">
+                <div key={i} className={`text-center transition-all duration-700 ${statsReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} 
+                  style={{ animationDelay: `${i * 150}ms` }}
+                >
                   <p className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent">
                     {stat.num}
                   </p>
@@ -409,10 +442,10 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`group bg-white rounded-[2rem] overflow-hidden border border-emerald-100/50 transition-all duration-500 flex flex-col h-full hover:shadow-elevated hover:-translate-y-2 ${
+                className={`group bg-white rounded-[2rem] overflow-hidden border border-emerald-100/50 transition-all duration-700 flex flex-col h-full hover:shadow-elevated hover:-translate-y-2 ${
                   hiwReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
-                style={{ animationDelay: `${200 + i * 150}ms`, boxShadow: 'var(--shadow-card)' }}
+                style={{ animationDelay: `${200 + i * 150}ms` }}
               >
                 {/* Image */}
                 <div className="relative w-full h-72 sm:h-80 overflow-hidden">
@@ -611,12 +644,11 @@ export default function Home() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className={`group relative bg-white rounded-[1.75rem] p-7 sm:p-8 border border-emerald-100/60 transition-all duration-500 hover:-translate-y-3 cursor-pointer ${
+                className={`group relative bg-white rounded-[2.2rem] p-8 sm:p-9 border border-emerald-100/60 transition-all duration-500 hover:-translate-y-3 cursor-pointer ${
                   featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
                 }`}
                 style={{
-                  animationDelay: `${200 + i * 120}ms`,
-                  boxShadow: 'var(--shadow-card)'
+                  animationDelay: `${200 + (i % 4) * 100}ms`
                 }}
               >
                 {/* Hover glow */}
