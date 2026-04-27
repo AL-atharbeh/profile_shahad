@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
-/* IBM Plex Sans Arabic Font */
+/* ═══════════════════════════════════════════════════════════════
+   شِهد — Premium BNPL Design System
+   A refined, emerald-infused visual language
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── IBM Plex Sans Arabic ─── */
 @font-face {
   font-family: 'IBM Plex Sans Arabic';
   src: url('/fonts/IBMPlexSansArabic-Regular.woff2') format('woff2');
@@ -17,23 +22,41 @@
   font-display: swap;
 }
 
+/* ─── Design Tokens ─── */
 :root {
   --background: #ffffff;
-  --foreground: #0f1c16;
-  --primary-gradient: linear-gradient(45deg, #132c17, #4d6528, #a1ae1c, #eddb80);
-  --primary-gradient-colors: #132c17, #4d6528, #a1ae1c, #eddb80;
-  --primary-color-start: #132c17;
-  --primary-color-mid1: #4d6528;
-  --primary-color-mid2: #a1ae1c;
-  --primary-color-end: #eddb80;
-  --text-gray: #4b5563;
-  --text-light: #6b7280;
+  --foreground: #0a1f10;
+
+  /* Curated Green Palette */
+  --emerald-950: #052e16;
+  --emerald-900: #0a3d1f;
+  --emerald-800: #14532d;
+  --emerald-700: #166534;
+  --emerald-600: #16a34a;
+  --emerald-500: #22c55e;
+  --emerald-400: #4ade80;
+  --emerald-300: #86efac;
+  --emerald-200: #bbf7d0;
+  --emerald-100: #dcfce7;
+  --emerald-50: #f0fdf4;
+
+  /* Accent — warm gold-lime */
+  --accent-500: #a1ae1c;
+  --accent-400: #bfcc33;
+  --accent-300: #d4e04d;
+  --accent-gold: #eddb80;
+
+  /* Spacing scale */
+  --section-py: clamp(4rem, 8vw, 8rem);
+
+  /* Shadows */
+  --shadow-card: 0 4px 24px rgba(10, 31, 16, 0.06), 0 1px 3px rgba(10, 31, 16, 0.04);
+  --shadow-card-hover: 0 12px 40px rgba(10, 31, 16, 0.12), 0 4px 12px rgba(10, 31, 16, 0.06);
+  --shadow-elevated: 0 20px 60px rgba(10, 31, 16, 0.15), 0 8px 24px rgba(10, 31, 16, 0.08);
+  --shadow-glow: 0 0 40px rgba(34, 197, 94, 0.2);
 }
 
-.gradient-primary {
-  background: linear-gradient(45deg, #132c17, #4d6528, #a1ae1c, #eddb80);
-}
-
+/* ─── Theme tokens → Tailwind ─── */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -44,36 +67,383 @@
   --font-ibm-plex-arabic: 'IBM Plex Sans Arabic', Arial, sans-serif;
 }
 
+/* ─── Base Styles ─── */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-oswald), Arial, Helvetica, sans-serif;
+  font-family: 'IBM Plex Sans Arabic', var(--font-oswald), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
-/* تطبيق IBM Plex Sans Arabic على جميع العناوين */
+/* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'IBM Plex Sans Arabic', Arial, sans-serif !important;
   font-weight: 700 !important;
 }
 
-/* تطبيق الخط على الكلاس */
-.font-ibm-plex-arabic {
-  font-family: 'IBM Plex Sans Arabic', Arial, sans-serif !important;
-  font-weight: 700 !important;
-}
-
-/* تطبيق الخط على أي عنصر يحتوي على الكلاس */
-[class*="font-ibm-plex-arabic"] {
-  font-family: 'IBM Plex Sans Arabic', Arial, sans-serif !important;
-  font-weight: 700 !important;
-}
-
-/* تطبيق الخط على الأزرار أيضاً */
+.font-ibm-plex-arabic,
+[class*="font-ibm-plex-arabic"],
 button.font-ibm-plex-arabic {
   font-family: 'IBM Plex Sans Arabic', Arial, sans-serif !important;
   font-weight: 700 !important;
 }
 
-p, span, div {
-  font-family: var(--font-federant), var(--font-oswald), sans-serif;
+p, span {
+  font-family: 'IBM Plex Sans Arabic', var(--font-federant), var(--font-oswald), sans-serif;
+}
+
+/* ─── Smooth scroll ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── Selection Color ─── */
+::selection {
+  background: var(--emerald-200);
+  color: var(--emerald-950);
+}
+
+/* ─── Scrollbar Styling ─── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--emerald-50);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--emerald-400);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--emerald-600);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes morph-blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  50% { border-radius: 50% 60% 30% 60% / 40% 70% 60% 30%; }
+  75% { border-radius: 60% 30% 60% 40% / 70% 40% 50% 60%; }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ─── Utility Animation Classes ─── */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+.animate-morph-blob {
+  animation: morph-blob 8s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+
+/* ─── Intersection observer reveal ─── */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS & SURFACE EFFECTS
+   ═══════════════════════════════════════════════════════════════ */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-card);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.glass-dark {
+  background: rgba(10, 31, 16, 0.85);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border: 1px solid rgba(34, 197, 94, 0.15);
+}
+
+/* Noise / grain texture overlay */
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Gradient borders ─── */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, var(--emerald-400), var(--accent-500), var(--emerald-600));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--emerald-700), var(--emerald-600));
+  color: white;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.875rem 2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--emerald-600), var(--emerald-500));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(22, 163, 74, 0.35);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-accent {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-400));
+  color: var(--emerald-950);
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: 0.875rem 2rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(161, 174, 28, 0.35);
+}
+
+/* ─── Decorative blobs ─── */
+.blob-emerald {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--emerald-300) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.blob-accent {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--accent-300) 0%, transparent 70%);
+  opacity: 0.1;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* ─── Step connector line ─── */
+.step-connector {
+  position: relative;
+}
+.step-connector::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--emerald-200), var(--emerald-400), var(--emerald-200));
+  z-index: 0;
+}
+
+/* ─── Reduced Motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal-on-scroll,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+  }
 }
