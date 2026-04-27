@@ -187,10 +187,6 @@ export default function Home() {
               { label: lang === "ar" ? "الرئيسية" : "Home", href: "/" },
               { label: lang === "ar" ? "كيف يعمل" : "How It Works", href: "/how-it-works" },
               { label: lang === "ar" ? "للأعمال" : "For Business", href: "/business" },
-            {[
-              { label: lang === "ar" ? "الرئيسية" : "Home", href: "/" },
-              { label: lang === "ar" ? "كيف يعمل" : "How It Works", href: "/how-it-works" },
-              { label: lang === "ar" ? "للأعمال" : "For Business", href: "/business" },
             ].map((item, i) => (
               <Link
                 key={i}
