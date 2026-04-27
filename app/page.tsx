@@ -358,7 +358,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            </div>
 
             {/* Premium Floating Badge (Desktop Only) */}
             <div className={`absolute top-1/4 ${lang === 'ar' ? 'left-1/4' : 'right-1/4'} hidden lg:block animate-float-slow`}>
