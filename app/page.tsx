@@ -445,25 +445,23 @@ export default function Home() {
       </section>
 
       {/* ═══ INSTALLMENT CALCULATOR ═══ */}
-      <section className="relative py-12 sm:py-16 bg-emerald-950 overflow-hidden" ref={calcReveal.ref}>
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10l.38.38L30.38 35.0l-.38-.38L54.62 10zM10.5 34.5l.5.5L35.5 10.5l-.5-.5L10.5 34.5z' fill='%23ffffff' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E")` }} />
+      <section className="relative py-14 sm:py-20 bg-white overflow-hidden" ref={calcReveal.ref}>
+        <div className="container mx-auto px-6 max-w-6xl relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-28 items-center">
 
-        <div className="container mx-auto px-6 max-w-5xl relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-            {/* Right Side: Title */}
+            {/* Title Side */}
             <div className={`text-center lg:text-right order-2 lg:order-2 ${calcReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl md:text-5xl font-bold text-emerald-950 mb-4 leading-tight">
                 {lang === "ar" ? "كيف شِهد تشتغل؟" : "How does Shahd work?"}
               </h2>
-              <p className="text-xl md:text-2xl text-emerald-400 font-bold">
+              <p className="text-xl md:text-2xl text-emerald-600 font-bold">
                 {lang === "ar" ? "جرّبها بنفسك." : "Try it yourself."}
               </p>
             </div>
 
-            {/* Left Side: Interactive Calculator */}
+            {/* Calculator Card */}
             <div className={`order-1 lg:order-1 max-w-md mx-auto lg:mx-0 w-full ${calcReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-              <div className="bg-[#0c1f17] rounded-[2rem] p-6 md:p-8 border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+              <div className="bg-[#0c1f17] rounded-[2rem] p-6 md:p-8 border border-emerald-900/30 shadow-[0_20px_60px_rgba(0,0,0,0.15)]">
                 {/* Amount Header */}
                 <div className="text-center mb-6">
                   <p className="text-white/50 text-xs font-bold mb-1 uppercase tracking-wider">{lang === "ar" ? "حدد المبلغ" : "Select Amount"}</p>
@@ -472,10 +470,10 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Slider */}
-                <div className="relative mb-8">
+                {/* Slider — always LTR so thumb tracks correctly */}
+                <div className="relative mb-8" dir="ltr">
                   <style>{`
-                    .calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; outline: none; cursor: pointer; }
+                    .calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; border-radius: 999px; outline: none; cursor: pointer; direction: ltr; }
                     .calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: white; border: 3px solid #10b981; cursor: pointer; box-shadow: 0 0 12px rgba(16,185,129,0.5); transition: transform 0.2s; margin-top: -8px; }
                     .calc-slider::-webkit-slider-thumb:hover { transform: scale(1.2); }
                     .calc-slider::-webkit-slider-runnable-track { height: 6px; border-radius: 999px; }
@@ -536,6 +534,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
 
 
 
