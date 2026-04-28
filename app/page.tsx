@@ -483,16 +483,16 @@ export default function Home() {
                   <input
                     type="range"
                     min={50}
-                    max={2000}
-                    step={10}
+                    max={400}
+                    step={5}
                     value={sliderAmount}
                     onChange={(e) => setSliderAmount(Number(e.target.value))}
                     className="calc-slider"
-                    style={{ background: `linear-gradient(to right, #10b981 0%, #10b981 ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.08) ${((sliderAmount - 50) / (2000 - 50)) * 100}%, rgba(255,255,255,0.08) 100%)` }}
+                    style={{ background: `linear-gradient(to right, #10b981 0%, #10b981 ${((sliderAmount - 50) / (400 - 50)) * 100}%, rgba(255,255,255,0.08) ${((sliderAmount - 50) / (400 - 50)) * 100}%, rgba(255,255,255,0.08) 100%)` }}
                   />
                   <div className="flex justify-between mt-2 text-[10px] text-white/25 font-bold">
                     <span>{lang === "ar" ? "د.أ 50" : "JD 50"}</span>
-                    <span>{lang === "ar" ? "د.أ 2,000" : "JD 2,000"}</span>
+                    <span>{lang === "ar" ? "د.أ 400" : "JD 400"}</span>
                   </div>
                 </div>
 
