@@ -129,14 +129,9 @@ export default function HowItWorksPage() {
                         <div className="absolute inset-0 bg-[#064e3b]" />
                         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10l.38.38L30.38 35.0l-.38-.38L54.62 10zM10.5 34.5l.5.5L35.5 10.5l-.5-.5L10.5 34.5z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")` }} />
 
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center p-8 md:p-16 h-full min-h-[450px] md:min-h-[550px] lg:min-h-[600px]">
-                            <div className={`flex justify-center order-2 md:order-1 ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                                <div className="relative w-full max-w-[280px] md:max-w-[340px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                                    <Image src="/images/shahad.png" alt="Shahd App" width={500} height={800} className="w-full h-auto animate-float-slow" priority />
-                                </div>
-                            </div>
-
-                            <div className={`order-1 md:order-2 flex flex-col justify-center ${lang === "ar" ? "text-right" : "text-left"}`}>
+                        <div className="relative z-10 flex flex-col md:flex-row items-stretch gap-0 h-full min-h-[450px] md:min-h-[550px] lg:min-h-[600px]">
+                            {/* Text Content */}
+                            <div className={`flex-1 flex flex-col justify-center p-8 md:p-16 order-1 md:order-1 ${lang === "ar" ? "text-right" : "text-left"}`}>
                                 <h1 className={`text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                     {t.title[lang]}
                                 </h1>
@@ -148,6 +143,17 @@ export default function HowItWorksPage() {
                                         {lang === "ar" ? "ابدأ اليوم" : "Start Today"}
                                     </button>
                                 </div>
+                            </div>
+
+                            {/* Image — complete and edge-to-edge */}
+                            <div className="flex-1 relative min-h-[300px] md:min-h-0 order-2 md:order-2 overflow-hidden">
+                                <Image 
+                                    src="/images/shahad.png" 
+                                    alt="Shahd App" 
+                                    fill 
+                                    className="object-cover object-center md:object-right" 
+                                    priority 
+                                />
                             </div>
                         </div>
                     </div>

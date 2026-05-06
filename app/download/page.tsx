@@ -84,10 +84,9 @@ export default function DownloadPage() {
                 <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_30%_40%,#10b981_0%,transparent_50%),radial-gradient(circle_at_70%_80%,#065f46_0%,transparent_50%)]" />
 
                 <div className="container mx-auto max-w-7xl relative z-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
+                    <div className="flex flex-col lg:flex-row items-stretch gap-0 h-full">
                         {/* Text Content */}
-                        <div className={`${lang === "ar" ? "text-right" : "text-left"}`}>
+                        <div className={`flex-1 flex flex-col justify-center py-10 md:py-20 ${lang === "ar" ? "text-right" : "text-left"}`}>
                             <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                 <span className="relative flex h-2 w-2">
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -123,11 +122,15 @@ export default function DownloadPage() {
                             </div>
                         </div>
 
-                        {/* Phone Image */}
-                        <div className={`flex justify-center ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                            <div className="relative w-full max-w-[300px] md:max-w-[360px] drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
-                                <Image src="/images/shahad_phone1.png" alt="Shahd App" width={600} height={800} className="w-full h-auto animate-float-slow" priority />
-                            </div>
+                        {/* Phone Image — complete and edge-to-edge */}
+                        <div className={`flex-1 relative min-h-[400px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <Image 
+                                src="/images/shahad_phone1.png" 
+                                alt="Shahd App" 
+                                fill 
+                                className="object-cover object-top lg:object-right" 
+                                priority 
+                            />
                         </div>
                     </div>
                 </div>
@@ -223,8 +226,8 @@ export default function DownloadPage() {
             {/* ═══ FINAL CTA ═══ */}
             <section className="py-20 md:py-32 bg-white" ref={ctaReveal.ref}>
                 <div className="container mx-auto px-6 max-w-7xl">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div className={`${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                    <div className="flex flex-col lg:flex-row items-stretch gap-0 rounded-[2.5rem] overflow-hidden border border-emerald-100 shadow-premium">
+                        <div className={`flex-1 p-10 md:p-16 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                             <h2 className="text-3xl md:text-5xl font-bold text-emerald-950 mb-8">
                                 {lang === "ar" ? "استمتع بتجربة تسوق مختلفة" : "Enjoy a Different Shopping Experience"}
                             </h2>
@@ -235,10 +238,13 @@ export default function DownloadPage() {
                                 {lang === "ar" ? "حمّل التطبيق" : "Download App"}
                             </button>
                         </div>
-                        <div className={`flex justify-center ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-                            <div className="relative w-full max-w-[320px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.2)]">
-                                <Image src="/images/shahad.png" alt="Shahd App" width={500} height={600} className="w-full h-auto animate-float-slow" />
-                            </div>
+                        <div className={`flex-1 relative min-h-[300px] lg:min-h-0 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+                            <Image 
+                                src="/images/shahad.png" 
+                                alt="Shahd App" 
+                                fill 
+                                className="object-cover object-center lg:object-right" 
+                            />
                         </div>
                     </div>
                 </div>
