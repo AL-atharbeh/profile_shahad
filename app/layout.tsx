@@ -22,6 +22,14 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   title: "شِهد - اشتر الآن وادفع لاحقًا | Shahd - Buy Now Pay Later",
   description: "منصة تمويل مبتكرة تتيح لك الشراء فورًا والدفع لاحقًا عبر أقساط مريحة. حل شامل للعملاء وأصحاب المتاجر.",
+  icons: {
+    icon: [
+      { url: "/images/logo_shahadd.png", type: "image/png" },
+    ],
+    apple: [
+      { url: "/images/logo_shahadd.png", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

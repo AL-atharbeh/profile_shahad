@@ -608,18 +608,9 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full bg-emerald-400/10 blur-[100px]" />
             <div className="absolute bottom-0 left-0 w-[200px] h-[200px] rounded-full bg-emerald-300/10 blur-[80px]" />
 
-            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 sm:gap-8 p-8 sm:p-10 md:p-14">
-              {/* Character Image */}
-              <div className="flex-shrink-0 relative w-full md:w-auto -mt-4 md:-mt-20 -mb-4 md:-mb-16">
-                <img
-                  src="/images/shopshahed.png"
-                  alt="شِهد"
-                  className="object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)] w-full max-w-[240px] sm:max-w-[300px] md:max-w-[380px] h-auto mx-auto md:mx-0 animate-float-slow"
-                />
-              </div>
-
+            <div className="relative z-10 flex flex-col md:flex-row items-stretch gap-0">
               {/* Text Content */}
-              <div className="flex-1 text-white flex flex-col justify-center text-center md:text-start w-full">
+              <div className="flex-1 text-white flex flex-col justify-center text-center md:text-start w-full p-8 sm:p-10 md:p-14">
                 <p className="text-sm text-white/50 mb-3 font-ibm-plex-arabic font-normal">
                   {lang === "ar" ? "انضم لملايين المتسوقين" : "Join millions of shoppers"}
                 </p>
@@ -677,6 +668,23 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Character Image — fills the right side completely, no animation */}
+              <div className="hidden md:block relative flex-shrink-0 w-[380px] lg:w-[440px] self-stretch">
+                <img
+                  src="/images/shopshahed.png"
+                  alt="شِهد"
+                  className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+              </div>
+              {/* Mobile image */}
+              <div className="md:hidden w-full">
+                <img
+                  src="/images/shopshahed.png"
+                  alt="شِهد"
+                  className="w-full max-w-[260px] mx-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                />
               </div>
             </div>
           </div>
