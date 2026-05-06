@@ -52,16 +52,15 @@ export default function DownloadPage() {
 
     return (
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-            
+
             {/* ═══ NAVBAR ═══ */}
-            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-                navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
-            }`}>
+            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
+                }`}>
                 <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
                     <Link href="/" className="flex items-center transform transition-transform hover:scale-105 active:scale-95">
                         <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="h-9 md:h-11 w-auto object-contain" priority />
                     </Link>
-                    
+
                     <div className="flex items-center gap-6">
                         <nav className="hidden lg:flex items-center gap-8">
                             <Link href="/" className="text-sm font-bold text-emerald-900/60 hover:text-emerald-900 transition-colors">{lang === "ar" ? "الرئيسية" : "Home"}</Link>
@@ -73,7 +72,7 @@ export default function DownloadPage() {
                             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition-all text-sm font-bold text-emerald-800"
                         >
                             <span className="text-[10px] opacity-60 font-bold">{lang === "ar" ? "EN" : "ع"}</span>
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                         </button>
                     </div>
                 </div>
@@ -86,7 +85,7 @@ export default function DownloadPage() {
 
                 <div className="container mx-auto max-w-7xl relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        
+
                         {/* Text Content */}
                         <div className={`${lang === "ar" ? "text-right" : "text-left"}`}>
                             <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
@@ -96,15 +95,15 @@ export default function DownloadPage() {
                                 </span>
                                 <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{lang === "ar" ? "متاح الآن" : "Available Now"}</span>
                             </div>
-                            
+
                             <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                 {t.title[lang]}
                             </h1>
-                            
+
                             <p className={`text-lg md:text-xl text-white/70 leading-relaxed mb-12 max-w-xl animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                 {t.subtitle[lang]}
                             </p>
-                            
+
                             {/* Store Buttons */}
                             <div className={`flex flex-wrap gap-4 animate-stagger-4 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                 <a href="#" className="group flex items-center gap-4 px-7 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
@@ -180,7 +179,7 @@ export default function DownloadPage() {
             {/* ═══ SMART PAYMENTS SECTION ═══ */}
             <section className="py-20 md:py-32 bg-emerald-950 text-white overflow-hidden relative" ref={smartReveal.ref}>
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]" />
-                
+
                 <div className="container mx-auto px-6 max-w-7xl relative z-10">
                     <div className={`text-center mb-20 ${smartReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6">

@@ -51,7 +51,7 @@ export default function HowItWorksPage() {
 
     const t = {
         title: { ar: "أحلى الأشياء تجي على دفعات", en: "The Best Things Come in Installments" },
-        subtitle: { 
+        subtitle: {
             ar: "مع شِهد، تقدر تقسّم مشترياتك على 4 دفعات بدون فوائد، أونلاين وداخل المتاجر. عملية سهلة، فورية، ومتوافقة تماماً مع أحكام الشريعة.",
             en: "With Shahd, split your purchases into 4 interest-free installments, online and in-store. Easy, instant, and fully Sharia-compliant."
         },
@@ -94,18 +94,17 @@ export default function HowItWorksPage() {
 
     return (
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-            
+
             {/* ═══ NAVBAR ═══ */}
-            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-                navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
-            }`}>
+            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
+                }`}>
                 <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
                     <Link href="/" className="flex items-center transform transition-transform hover:scale-105 active:scale-95 group">
                         <div className="relative">
                             <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="h-9 md:h-11 w-auto object-contain" priority />
                         </div>
                     </Link>
-                    
+
                     <div className="flex items-center gap-4">
                         <Link href="/" className="hidden sm:inline-block text-sm font-bold text-emerald-900 hover:text-emerald-600 transition-colors">
                             {lang === "ar" ? "الرئيسية" : "Home"}
@@ -115,7 +114,7 @@ export default function HowItWorksPage() {
                             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition-all text-sm font-bold text-emerald-800"
                         >
                             <span className="text-[10px] opacity-60 font-bold">{lang === "ar" ? "EN" : "ع"}</span>
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
                         </button>
                     </div>
                 </div>
@@ -124,7 +123,7 @@ export default function HowItWorksPage() {
             {/* ═══ HERO SECTION ═══ */}
             <section className="relative w-full pt-28 sm:pt-36 pb-16 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>
                 <div className="blob-emerald w-[500px] h-[500px] -top-40 -right-40 animate-morph-blob opacity-20" />
-                
+
                 <div className="container mx-auto max-w-7xl relative">
                     <div className="relative overflow-hidden rounded-[2.5rem] shadow-premium bg-emerald-950 min-h-[450px] md:min-h-[550px] lg:min-h-[600px] group">
                         <div className="absolute inset-0 bg-[#064e3b]" />
@@ -160,23 +159,23 @@ export default function HowItWorksPage() {
                 <div className="container mx-auto px-6 max-w-7xl">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {[
-                            { 
-                                title: lang === "ar" ? "ادفع على راحتك" : "Pay at Your Pace", 
+                            {
+                                title: lang === "ar" ? "ادفع على راحتك" : "Pay at Your Pace",
                                 desc: lang === "ar" ? "تسوق الأشياء اللي تحبها وقسّم مشترياتك شوي شوي." : "Shop for things you love and split your payments gradually.",
                                 icon: "M12 8c-1.657 0-3 1.343-3 3s1.343 3 3 3 3-1.343 3-3-1.343-3-3-3z M2 17l10 5 10-5M2 12l10 5 10-5M2 7l10 5 10-5"
                             },
-                            { 
-                                title: lang === "ar" ? "بدون فوائد أو رسوم" : "No Interest or Fees", 
+                            {
+                                title: lang === "ar" ? "بدون فوائد أو رسوم" : "No Interest or Fees",
                                 desc: lang === "ar" ? "سدد الدفعات في وقتها، ولا تدفع أكثر من مبلغ مشترياتك." : "Pay on time and don't pay a penny more than the checkout price.",
                                 icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                             },
-                            { 
-                                title: lang === "ar" ? "اختر أي بطاقة" : "Choose Any Card", 
+                            {
+                                title: lang === "ar" ? "اختر أي بطاقة" : "Choose Any Card",
                                 desc: lang === "ar" ? "اربط بطاقتك الإئتمانية أو البنكية واحصل على موافقة فورية." : "Link any credit or debit card and get approved in seconds.",
                                 icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                             }
                         ].map((item, i) => (
-                            <div key={i} 
+                            <div key={i}
                                 className={`text-center p-10 rounded-[2.5rem] bg-emerald-50/50 border border-emerald-100 transition-all duration-700 hover:shadow-elevated hover:-translate-y-2 ${splitReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                                 style={{ animationDelay: `${i * 200}ms` }}
                             >
@@ -194,7 +193,7 @@ export default function HowItWorksPage() {
             {/* ═══ HOW TO PAY ONLINE ═══ */}
             <section className="py-20 md:py-32 bg-emerald-950 text-white overflow-hidden relative" ref={onlineReveal.ref}>
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:20px_20px]" />
-                
+
                 <div className="container mx-auto px-6 max-w-7xl relative z-10">
                     <div className="text-center mb-20">
                         <h2 className={`text-3xl md:text-5xl font-bold mb-6 ${onlineReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -233,7 +232,7 @@ export default function HowItWorksPage() {
 
                     <div className="space-y-4">
                         {faqs.map((faq, index) => (
-                            <div key={index} 
+                            <div key={index}
                                 className={`glass-card rounded-[2rem] overflow-hidden border border-emerald-100 transition-all duration-700 ${faqReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                                 style={{ animationDelay: `${index * 100}ms` }}
                             >

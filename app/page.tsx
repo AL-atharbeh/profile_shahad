@@ -162,11 +162,10 @@ export default function Home() {
 
       {/* ═══ NAVBAR ═══ */}
       <header
-        className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          navScrolled
+        className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${navScrolled
             ? 'bg-white/90 backdrop-blur-xl shadow-[0_1px_20px_rgba(10,31,16,0.06)] border-b border-emerald-100/50'
             : 'bg-transparent'
-        }`}
+          }`}
       >
         <div className="container mx-auto px-4 md:px-8 py-3 flex justify-between items-center max-w-7xl">
 
@@ -221,7 +220,7 @@ export default function Home() {
               className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition-all duration-300 text-sm font-medium text-emerald-800 cursor-pointer"
             >
               <span className="text-xs">{lang === "ar" ? "EN" : "ع"}</span>
-              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
             </button>
 
             {/* Mobile menu toggle */}
@@ -242,9 +241,8 @@ export default function Home() {
 
       {/* ═══ MOBILE MENU ═══ */}
       <div
-        className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className={`lg:hidden fixed inset-0 z-[100] bg-white transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
       >
         {/* Decorative blob */}
         <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-gradient-to-br from-emerald-100 to-emerald-50 blur-[100px] -translate-y-1/2 translate-x-1/3 opacity-60" />
@@ -260,9 +258,8 @@ export default function Home() {
                 key={i}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className={`text-3xl font-bold text-[#0a1f10] py-4 border-b border-emerald-50 active:text-emerald-600 transition-all duration-300 ${
-                  isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
-                }`}
+                className={`text-3xl font-bold text-[#0a1f10] py-4 border-b border-emerald-50 active:text-emerald-600 transition-all duration-300 ${isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
+                  }`}
                 style={{ transitionDelay: `${150 + i * 80}ms` }}
               >
                 {item.label}
@@ -282,7 +279,7 @@ export default function Home() {
               className="flex items-center justify-between w-full px-6 py-4 rounded-2xl bg-emerald-50 font-ibm-plex-arabic font-bold text-emerald-800 active:scale-[0.98] transition-all mt-2 cursor-pointer"
             >
               <span className="text-lg">{lang === "ar" ? "English Version" : "النسخة العربية"}</span>
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
             </button>
           </div>
         </div>
@@ -292,7 +289,7 @@ export default function Home() {
       <section className="relative w-full pt-20 sm:pt-24 pb-12 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>
         {/* Decorative elements */}
         <div className="blob-emerald w-[500px] h-[500px] -top-20 -left-20 animate-morph-blob opacity-20" />
-        
+
         <div className="container mx-auto max-w-7xl relative">
           <div className="relative overflow-hidden rounded-[2.5rem] shadow-premium group min-h-[500px] md:min-h-[600px] lg:min-h-[650px] bg-emerald-950">
             {/* Background Image */}
@@ -306,17 +303,15 @@ export default function Home() {
                 priority
               />
               {/* Gradient overlay optimized for text clarity */}
-              <div className={`absolute inset-0 ${
-                lang === "ar"
+              <div className={`absolute inset-0 ${lang === "ar"
                   ? "bg-gradient-to-l from-emerald-950 via-emerald-950/40 to-transparent"
                   : "bg-gradient-to-r from-emerald-950 via-emerald-950/40 to-transparent"
-              }`} />
+                }`} />
             </div>
 
             {/* Hero Text Content */}
-            <div className={`relative z-10 h-full w-full flex flex-col justify-center px-8 sm:px-16 md:px-24 py-20 max-w-3xl ${
-              lang === "ar" ? "mr-0 items-start text-start" : "ml-0 items-start text-start"
-            }`}>
+            <div className={`relative z-10 h-full w-full flex flex-col justify-center px-8 sm:px-16 md:px-24 py-20 max-w-3xl ${lang === "ar" ? "mr-0 items-start text-start" : "ml-0 items-start text-start"
+              }`}>
               {/* Badge */}
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
@@ -363,7 +358,7 @@ export default function Home() {
                 { num: `${userCount}K+`, label: lang === "ar" ? "مستخدم" : "Users" },
                 { num: `${satisfactionCount}%`, label: lang === "ar" ? "رضا العملاء" : "Satisfaction" },
               ].map((stat, i) => (
-                <div key={i} className={`text-center transition-all duration-700 ${statsReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} 
+                <div key={i} className={`text-center transition-all duration-700 ${statsReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                   style={{ animationDelay: `${i * 150}ms` }}
                 >
                   <p className="text-2xl sm:text-3xl md:text-4xl font-ibm-plex-arabic font-bold bg-gradient-to-r from-emerald-800 to-emerald-600 bg-clip-text text-transparent">
@@ -411,9 +406,8 @@ export default function Home() {
             ].map((item, i) => (
               <div
                 key={i}
-                className={`group bg-white rounded-[2rem] overflow-hidden border border-emerald-100/50 transition-all duration-700 flex flex-col h-full hover:shadow-elevated hover:-translate-y-2 ${
-                  hiwReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                }`}
+                className={`group bg-white rounded-[2rem] overflow-hidden border border-emerald-100/50 transition-all duration-700 flex flex-col h-full hover:shadow-elevated hover:-translate-y-2 ${hiwReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                  }`}
                 style={{ animationDelay: `${200 + i * 150}ms` }}
               >
                 {/* Image */}
@@ -562,7 +556,7 @@ export default function Home() {
             {/* Text Content */}
             <div className={`flex-1 space-y-6 w-full md:w-auto text-center md:text-start ${cardReveal.isVisible ? 'animate-slide-in-right delay-200' : 'opacity-0'}`}>
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-ibm-plex-arabic font-semibold">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="1" y="4" width="22" height="16" rx="2" ry="2" /><line x1="1" y1="10" x2="23" y2="10" /></svg>
                 {t.cardTitle[lang]}
               </span>
 
@@ -650,7 +644,7 @@ export default function Home() {
                       <div className="flex items-center justify-center sm:justify-start gap-2">
                         <div className="flex text-emerald-400">
                           {[...Array(5)].map((_, i) => (
-                            <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                            <svg key={i} className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                           ))}
                         </div>
                         <span className="text-xs text-white/60 font-ibm-plex-arabic">
@@ -678,12 +672,12 @@ export default function Home() {
                   className="absolute inset-0 w-full h-full object-cover object-center"
                 />
               </div>
-              {/* Mobile image */}
-              <div className="md:hidden w-full">
+              {/* Mobile image — complete and edge-to-edge */}
+              <div className="md:hidden w-full overflow-hidden mt-6">
                 <img
                   src="/images/shopshahed.png"
                   alt="شِهد"
-                  className="w-full max-w-[260px] mx-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                  className="w-full h-auto object-cover object-top rounded-b-[2rem]"
                 />
               </div>
             </div>
@@ -714,9 +708,8 @@ export default function Home() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className={`group relative bg-white rounded-[2.2rem] p-8 sm:p-9 border border-emerald-100/60 transition-all duration-500 hover:-translate-y-3 cursor-pointer ${
-                  featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
-                }`}
+                className={`group relative bg-white rounded-[2.2rem] p-8 sm:p-9 border border-emerald-100/60 transition-all duration-500 hover:-translate-y-3 cursor-pointer ${featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'
+                  }`}
                 style={{
                   animationDelay: `${200 + (i % 4) * 100}ms`
                 }}
@@ -900,7 +893,7 @@ export default function Home() {
               © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
             </p>
             <div className="flex items-center gap-2 text-emerald-800/30 text-xs font-ibm-plex-arabic">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
               {lang === "ar" ? "جميع المعاملات مشفرة وآمنة" : "All transactions encrypted & secure"}
             </div>
           </div>
@@ -909,9 +902,8 @@ export default function Home() {
 
       {/* ═══ FIXED MOBILE DOWNLOAD ═══ */}
       <button
-        className={`md:hidden fixed bottom-0 left-0 right-0 mx-4 mb-4 px-6 py-4 rounded-2xl bg-[#0a1f10] text-white text-base font-ibm-plex-arabic font-bold shadow-[0_-4px_30px_rgba(0,0,0,0.15)] transition-all duration-500 z-50 flex items-center justify-center gap-2 cursor-pointer backdrop-blur-lg ${
-          showButton ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-        }`}
+        className={`md:hidden fixed bottom-0 left-0 right-0 mx-4 mb-4 px-6 py-4 rounded-2xl bg-[#0a1f10] text-white text-base font-ibm-plex-arabic font-bold shadow-[0_-4px_30px_rgba(0,0,0,0.15)] transition-all duration-500 z-50 flex items-center justify-center gap-2 cursor-pointer backdrop-blur-lg ${showButton ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
+          }`}
       >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
         <span>{lang === "ar" ? "حمل التطبيق" : "Download App"}</span>
