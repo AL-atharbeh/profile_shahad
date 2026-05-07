@@ -153,10 +153,10 @@ export default function BusinessPage() {
                             {/* Right Side: Image — edge-to-edge of the rounded container */}
                             <div className={`flex-1 relative hidden lg:block h-full min-h-[600px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                                 <Image 
-                                    src="/images/merchant_dashboard.png" 
-                                    alt="Merchant Dashboard" 
+                                    src="/images/shahed-pic.png" 
+                                    alt="Shahd Partner" 
                                     fill 
-                                    className="absolute inset-0 w-full h-full object-contain object-center lg:object-left p-8" 
+                                    className="absolute inset-0 w-full h-full object-cover object-center" 
                                     priority 
                                 />
                             </div>
