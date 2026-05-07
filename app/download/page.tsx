@@ -244,12 +244,12 @@ export default function DownloadPage() {
                                 {lang === "ar" ? "حمّل التطبيق" : "Download App"}
                             </button>
                         </div>
-                        <div className={`flex-1 relative min-h-[400px] lg:min-h-0 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+                        <div className={`flex-1 relative min-h-[400px] lg:min-h-0 bg-emerald-50/30 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
                             <Image 
                                 src="/images/shahad.png" 
                                 alt="Shahd App" 
                                 fill 
-                                className="object-cover object-top" 
+                                className="object-contain p-8" 
                             />
                         </div>
                     </div>

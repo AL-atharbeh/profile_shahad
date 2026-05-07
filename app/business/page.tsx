@@ -153,7 +153,7 @@ export default function BusinessPage() {
                             {/* Right Side: Image — edge-to-edge of the rounded container */}
                             <div className={`flex-1 relative hidden lg:block h-full min-h-[600px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                                 <Image 
-                                    src="/images/97398349855.png" 
+                                    src="/images/merchant_dashboard.png" 
                                     alt="Merchant Dashboard" 
                                     fill 
                                     className="absolute inset-0 w-full h-full object-contain object-center lg:object-left p-8" 
@@ -214,12 +214,12 @@ export default function BusinessPage() {
                                 ))}
                             </ul>
                         </div>
-                        <div className={`relative overflow-hidden rounded-[2.5rem] min-h-[400px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+                        <div className={`relative overflow-hidden rounded-[3rem] bg-emerald-50/50 min-h-[500px] flex items-center justify-center ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
                             <Image 
                                 src="/images/pay.png" 
                                 alt="Fast Payment" 
                                 fill 
-                                className="object-cover object-center" 
+                                className="object-contain p-6 md:p-12" 
                             />
                         </div>
                     </div>

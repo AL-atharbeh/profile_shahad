@@ -146,12 +146,12 @@ export default function HowItWorksPage() {
                             </div>
 
                             {/* Image — complete and edge-to-edge */}
-                            <div className="flex-1 relative min-h-[300px] md:min-h-0 order-2 md:order-2 overflow-hidden">
+                            <div className="flex-1 relative min-h-[400px] md:min-h-0 order-2 md:order-2 overflow-hidden">
                                 <Image 
                                     src="/images/shahad.png" 
                                     alt="Shahd App" 
                                     fill 
-                                    className="object-cover object-center md:object-right" 
+                                    className="object-cover object-top md:object-right" 
                                     priority 
                                 />
                             </div>

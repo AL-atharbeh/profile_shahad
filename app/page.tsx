@@ -665,11 +665,11 @@ export default function Home() {
               </div>
 
               {/* Character Image — fills the right side completely, no animation */}
-              <div className="hidden md:block relative flex-shrink-0 w-[380px] lg:w-[440px] self-stretch">
+              <div className="hidden md:block relative flex-shrink-0 w-[380px] lg:w-[440px] self-stretch bg-emerald-950/20">
                 <img
                   src="/images/shopshahed.png"
                   alt="شِهد"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  className="absolute inset-0 w-full h-full object-contain p-8"
                 />
               </div>
               {/* Mobile image — complete and edge-to-edge */}
