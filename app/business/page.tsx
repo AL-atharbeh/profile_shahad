@@ -120,9 +120,9 @@ export default function BusinessPage() {
                         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_20%_30%,#10b981_0%,transparent_50%),radial-gradient(circle_at_80%_70%,#065f46_0%,transparent_50%)]" />
                         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.62 10l.38.38L30.38 35.0l-.38-.38L54.62 10zM10.5 34.5l.5.5L35.5 10.5l-.5-.5L10.5 34.5z' fill='%23ffffff' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E")` }} />
 
-                        <div className="relative z-10 flex flex-col lg:flex-row items-stretch gap-0 h-full min-h-[500px] md:min-h-[600px] lg:min-h-[650px]">
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-[500px] md:min-h-[600px] lg:min-h-[650px]">
                             {/* Left Side: Content */}
-                            <div className={`flex-1 flex flex-col justify-center p-8 sm:p-12 md:p-16 lg:p-20 ${lang === "ar" ? "text-right" : "text-left"}`}>
+                            <div className={`flex flex-col justify-center p-8 sm:p-12 md:p-16 lg:p-20 ${lang === "ar" ? "text-right lg:order-2" : "text-left lg:order-1"}`}>
                                 <div className={`inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-8 animate-stagger-1 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                     <span className="relative flex h-2 w-2">
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -151,7 +151,7 @@ export default function BusinessPage() {
                             </div>
 
                             {/* Right Side: Image — edge-to-edge of the rounded container */}
-                            <div className={`flex-1 relative hidden lg:block h-full min-h-[600px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className={`relative min-h-[500px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'} ${lang === "ar" ? "lg:order-1" : "lg:order-2"}`}>
                                 <Image 
                                     src="/images/shahed-pic.png" 
                                     alt="Shahd Partner" 
