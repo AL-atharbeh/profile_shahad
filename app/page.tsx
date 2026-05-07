@@ -669,7 +669,7 @@ export default function Home() {
                 <img
                   src="/images/shopshahed.png"
                   alt="شِهد"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
               </div>
               {/* Mobile image — complete and edge-to-edge */}

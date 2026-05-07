@@ -151,12 +151,12 @@ export default function BusinessPage() {
                             </div>
 
                             {/* Right Side: Image — edge-to-edge of the rounded container */}
-                            <div className={`flex-1 relative hidden lg:block h-full min-h-[500px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className={`flex-1 relative hidden lg:block h-full min-h-[600px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                                 <Image 
                                     src="/images/97398349855.png" 
                                     alt="Merchant Dashboard" 
                                     fill 
-                                    className="absolute inset-0 w-full h-full object-cover object-center lg:object-left" 
+                                    className="absolute inset-0 w-full h-full object-contain object-center lg:object-left p-8" 
                                     priority 
                                 />
                             </div>
@@ -225,12 +225,12 @@ export default function BusinessPage() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                        <div className={`order-2 md:order-1 relative overflow-hidden rounded-[2.5rem] min-h-[400px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+                        <div className={`order-2 md:order-1 relative overflow-hidden rounded-[2.5rem] min-h-[500px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
                             <Image 
                                 src="/images/shopshahed.png" 
                                 alt="Merchant Growth" 
                                 fill 
-                                className="object-cover object-center" 
+                                className="object-cover object-top" 
                             />
                         </div>
                         <div className={`order-1 md:order-2 ${featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>

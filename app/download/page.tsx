@@ -127,12 +127,12 @@ export default function DownloadPage() {
                             </div>
 
                             {/* Phone Image — complete and edge-to-edge of the rounded container */}
-                            <div className={`flex-1 relative min-h-[400px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <div className={`flex-1 relative min-h-[500px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                                 <Image 
                                     src="/images/shahad_phone1.png" 
                                     alt="Shahd App" 
                                     fill 
-                                    className="absolute inset-0 w-full h-full object-cover object-center" 
+                                    className="absolute inset-0 w-full h-full object-cover object-top" 
                                     priority 
                                 />
                             </div>
@@ -244,12 +244,12 @@ export default function DownloadPage() {
                                 {lang === "ar" ? "حمّل التطبيق" : "Download App"}
                             </button>
                         </div>
-                        <div className={`flex-1 relative min-h-[300px] lg:min-h-0 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
+                        <div className={`flex-1 relative min-h-[400px] lg:min-h-0 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
                             <Image 
                                 src="/images/shahad.png" 
                                 alt="Shahd App" 
                                 fill 
-                                className="object-cover object-center lg:object-right" 
+                                className="object-cover object-top" 
                             />
                         </div>
                     </div>
