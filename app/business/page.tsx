@@ -148,35 +148,15 @@ export default function BusinessPage() {
                             </div>
                         </div>
 
-                        {/* Right Side: Layered Ecosystem Composition (5 columns) */}
-                        <div className={`lg:col-span-5 relative hidden lg:block ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
-                            <div className="relative w-full aspect-square">
-                                {/* Base Dash Component */}
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-emerald-500/10 rounded-[3rem] blur-3xl" />
-                                
-                                {/* Main App Screen */}
-                                <div className="absolute top-0 right-0 w-[80%] drop-shadow-[0_40px_80px_rgba(0,0,0,0.4)] animate-float-slow">
-                                    <Image src="/images/97398349855.png" alt="Merchant Dashboard" width={800} height={1000} className="w-full h-auto rounded-[3rem]" priority />
-                                </div>
-                                
-                                {/* Floating Metric Card 1 */}
-                                <div className="absolute -bottom-4 -left-10 glass-card p-6 rounded-[2rem] border border-white/20 shadow-2xl animate-stagger-5 delay-500 max-w-[220px]">
-                                    <div className="flex items-center gap-3 mb-2">
-                                        <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-white">
-                                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                                        </div>
-                                        <span className="text-white font-bold text-xs">Growth</span>
-                                    </div>
-                                    <div className="text-2xl font-bold text-white">+142%</div>
-                                    <div className="text-[10px] text-white/50 uppercase tracking-tighter">Avg Sales Boost</div>
-                                </div>
-
-                                {/* Floating Metric Card 2 */}
-                                <div className="absolute top-20 -left-20 glass-card p-5 rounded-[1.5rem] border border-white/20 shadow-2xl animate-stagger-6 delay-700 max-w-[180px]">
-                                    <div className="text-emerald-400 font-bold mb-1">99.9%</div>
-                                    <div className="text-[10px] text-white/70">Success Rate</div>
-                                </div>
-                            </div>
+                        {/* Right Side: Image — complete and edge-to-edge */}
+                        <div className={`lg:col-span-5 relative hidden lg:block h-full min-h-[500px] overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                            <Image 
+                                src="/images/97398349855.png" 
+                                alt="Merchant Dashboard" 
+                                fill 
+                                className="object-cover object-left" 
+                                priority 
+                            />
                         </div>
                     </div>
                 </div>
@@ -230,20 +210,24 @@ export default function BusinessPage() {
                                 ))}
                             </ul>
                         </div>
-                        <div className={`relative ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-                            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-premium group">
-                                <Image src="/images/pay.png" alt="Fast Payment" width={600} height={600} className="w-full h-auto transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-emerald-200/50 rounded-full blur-3xl" />
+                        <div className={`relative overflow-hidden rounded-[2.5rem] min-h-[400px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+                            <Image 
+                                src="/images/pay.png" 
+                                alt="Fast Payment" 
+                                fill 
+                                className="object-cover object-center" 
+                            />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                        <div className={`order-2 md:order-1 relative ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-                            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-premium group">
-                                <Image src="/images/shopshahed.png" alt="Merchant Growth" width={600} height={600} className="w-full h-auto transition-transform duration-700 group-hover:scale-110" />
-                            </div>
-                            <div className="absolute -top-10 -left-10 w-40 h-40 bg-emerald-200/50 rounded-full blur-3xl" />
+                        <div className={`order-2 md:order-1 relative overflow-hidden rounded-[2.5rem] min-h-[400px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
+                            <Image 
+                                src="/images/shopshahed.png" 
+                                alt="Merchant Growth" 
+                                fill 
+                                className="object-cover object-center" 
+                            />
                         </div>
                         <div className={`order-1 md:order-2 ${featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                             <div className="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-8 shadow-glow">
