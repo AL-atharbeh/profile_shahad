@@ -53,6 +53,8 @@ function useCountUp(target: number, duration: number = 2000, trigger: boolean = 
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("ar");
+  const [showButton, setShowButton] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [sliderAmount, setSliderAmount] = useState(200);
 
   // Section reveal refs
@@ -69,6 +71,20 @@ export default function Home() {
   const merchantCount = useCountUp(500, 2000, statsReveal.isVisible);
   const userCount = useCountUp(100, 2000, statsReveal.isVisible);
   const satisfactionCount = useCountUp(99, 2000, statsReveal.isVisible);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        setShowButton(true);
+      } else if (currentScrollY < lastScrollY || currentScrollY < 200) {
+        setShowButton(false);
+      }
+      setLastScrollY(currentScrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
 
 
