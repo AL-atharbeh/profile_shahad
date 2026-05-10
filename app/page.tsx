@@ -527,20 +527,20 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Character Image — fills the right side completely, no animation */}
-              <div className="hidden md:block relative flex-shrink-0 w-[380px] lg:w-[440px] self-stretch bg-emerald-950/20">
+              {/* Character Image — fills the right side completely, no gaps or padding */}
+              <div className="hidden md:block relative flex-shrink-0 w-[380px] lg:w-[460px] self-stretch overflow-hidden">
                 <img
                   src="/images/shopshahed.png"
                   alt="شِهد"
-                  className="absolute inset-0 w-full h-full object-contain p-8"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
               </div>
               {/* Mobile image — complete and edge-to-edge */}
-              <div className="md:hidden w-full overflow-hidden mt-6">
+              <div className="md:hidden w-full overflow-hidden">
                 <img
                   src="/images/shopshahed.png"
                   alt="شِهد"
-                  className="w-full h-auto object-cover object-top rounded-b-[2rem]"
+                  className="w-full h-auto object-cover object-top"
                 />
               </div>
             </div>
