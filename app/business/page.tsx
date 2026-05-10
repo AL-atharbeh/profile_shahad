@@ -67,7 +67,7 @@ export default function BusinessPage() {
 
     const t = {
         title: { ar: "شريكك في النمو والابتكار", en: "Your Partner in Growth and Innovation" },
-        subtitle: { 
+        subtitle: {
             ar: "انضم إلى شبكة تجار شِهد اليوم. نمكنك من تقديم حلول تقسيط مرنة لعملائك، مما يزيد من مبيعاتك ويحسن تجربة عملائك، مع ضمان استلام مستحقاتك فوراً.",
             en: "Join the Shahd merchant network. Offer flexible installment solutions, increase sales, and improve customer loyalty with guaranteed immediate payments."
         },
@@ -77,7 +77,7 @@ export default function BusinessPage() {
 
     return (
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-            
+
             {/* ═══ NAVBAR ═══ */}
             <Navbar lang={lang} setLang={setLang} />
 
@@ -102,34 +102,34 @@ export default function BusinessPage() {
                                     </span>
                                     <span className="text-emerald-400 text-xs font-bold uppercase tracking-widest">{lang === "ar" ? "انضم لرواد التجارة" : "Join the Elite"}</span>
                                 </div>
-                                
+
                                 <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                     {t.title[lang]}
                                 </h1>
-                                
+
                                 <p className={`text-lg md:text-xl text-white/70 leading-relaxed mb-12 max-w-xl animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                     {t.subtitle[lang]}
                                 </p>
-                                
+
                                 <div className={`flex flex-wrap gap-6 animate-stagger-4 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
                                     <button className="btn-premium-gold px-10 py-4.5 rounded-2xl font-bold text-lg shadow-[0_20px_50px_rgba(245,158,11,0.3)]">
                                         {lang === "ar" ? "ابدأ كشريك" : "Partner with Us"}
                                     </button>
                                     <button className="group px-8 py-4.5 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white font-bold text-lg hover:bg-white/20 transition-all flex items-center gap-3">
                                         {lang === "ar" ? "تواصل معنا" : "Contact Sales"}
-                                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                        <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                                     </button>
                                 </div>
                             </div>
 
                             {/* Right Side: Image — edge-to-edge of the rounded container */}
                             <div className={`relative min-h-[500px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'} ${lang === "ar" ? "lg:order-1" : "lg:order-2"}`}>
-                                <Image 
-                                    src="/images/shahed-pic.png" 
-                                    alt="Shahd Partner" 
-                                    fill 
-                                    className="absolute inset-0 w-full h-full object-cover object-center" 
-                                    priority 
+                                <Image
+                                    src="/images/shahed-pic.png"
+                                    alt="Shahd Partner"
+                                    fill
+                                    className="absolute inset-0 w-full h-full object-cover object-center"
+                                    priority
                                 />
                             </div>
                         </div>
@@ -145,7 +145,7 @@ export default function BusinessPage() {
                         <h2 className="text-3xl md:text-5xl font-bold text-emerald-950 mb-4">{t.statsTitle[lang]}</h2>
                         <div className="w-20 h-1 bg-emerald-500 mx-auto rounded-full" />
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
                             { val: stat1Val, label: lang === "ar" ? "زيادة في حجم سلة التسوق" : "Average Order Value Increase", suffix: "%+" },
@@ -187,22 +187,22 @@ export default function BusinessPage() {
                             </ul>
                         </div>
                         <div className={`relative overflow-hidden rounded-[3rem] bg-emerald-50/50 min-h-[500px] flex items-center justify-center ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-                            <Image 
-                                src="/images/pay.png" 
-                                alt="Fast Payment" 
-                                fill 
-                                className="object-contain p-6 md:p-12" 
+                            <Image
+                                src="/images/pay.png"
+                                alt="Fast Payment"
+                                fill
+                                className="object-contain p-6 md:p-12"
                             />
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                         <div className={`order-2 md:order-1 relative overflow-hidden rounded-[2.5rem] min-h-[500px] ${featuresReveal.isVisible ? 'animate-fade-in-up delay-300' : 'opacity-0'}`}>
-                            <Image 
-                                src="/images/shopshahed.png" 
-                                alt="Merchant Growth" 
-                                fill 
-                                className="object-cover object-top" 
+                            <Image
+                                src="/images/shopshahed.png"
+                                alt="Merchant Growth"
+                                fill
+                                className="object-cover object-top"
                             />
                         </div>
                         <div className={`order-1 md:order-2 ${featuresReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
@@ -238,18 +238,18 @@ export default function BusinessPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {[
-                            { 
-                                title: lang === "ar" ? "المتاجر الإلكترونية" : "E-Commerce", 
+                            {
+                                title: lang === "ar" ? "المتاجر الإلكترونية" : "E-Commerce",
                                 desc: lang === "ar" ? "إضافات جاهزة لأشهر المنصات مثل سلة، زد، وغيرها." : "Ready-to-use plugins for Salla, Zid, Magento and more.",
                                 icon: "M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                             },
-                            { 
-                                title: lang === "ar" ? "نقاط البيع" : "In-Store POS", 
+                            {
+                                title: lang === "ar" ? "نقاط البيع" : "In-Store POS",
                                 desc: lang === "ar" ? "تكامل سلس مع أنظمة نقاط البيع لعمليات مسح سريعة." : "Seamless POS integration for lightning-fast QR scanning.",
                                 icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                             },
-                            { 
-                                title: lang === "ar" ? "روابط الدفع" : "Payment Links", 
+                            {
+                                title: lang === "ar" ? "روابط الدفع" : "Payment Links",
                                 desc: lang === "ar" ? "أنشئ روابط دفع وشاركها عبر الرسائل بسرعة." : "Create and share payment links via SMS or social media instantly.",
                                 icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101"
                             }
@@ -303,20 +303,20 @@ export default function BusinessPage() {
                             </div>
                         </div>
                         <div className="flex flex-col items-center md:items-start">
-                             <h4 className="font-bold mb-6 text-emerald-400">{lang === "ar" ? "الدعم" : "Support"}</h4>
-                             <div className="flex flex-col gap-4 text-white/50 text-sm font-bold">
+                            <h4 className="font-bold mb-6 text-emerald-400">{lang === "ar" ? "الدعم" : "Support"}</h4>
+                            <div className="flex flex-col gap-4 text-white/50 text-sm font-bold">
                                 <Link href="/faq">{lang === "ar" ? "الأسئلة الشائعة" : "FAQ"}</Link>
                                 <Link href="/terms">{lang === "ar" ? "الشروط" : "Terms"}</Link>
                                 <Link href="/contact">{lang === "ar" ? "اتصل بنا" : "Contact"}</Link>
-                             </div>
+                            </div>
                         </div>
                         <div className="flex flex-col items-center md:items-start">
-                             <h4 className="font-bold mb-6 text-emerald-400">{lang === "ar" ? "اللغة" : "Language"}</h4>
-                             <button onClick={() => setLang(lang === "ar" ? "en" : "ar")} className="text-white/50 text-sm font-bold uppercase tracking-widest">{lang === "ar" ? "English" : "عربي"}</button>
+                            <h4 className="font-bold mb-6 text-emerald-400">{lang === "ar" ? "اللغة" : "Language"}</h4>
+                            <button onClick={() => setLang(lang === "ar" ? "en" : "ar")} className="text-white/50 text-sm font-bold uppercase tracking-widest">{lang === "ar" ? "English" : "عربي"}</button>
                         </div>
                     </div>
                     <div className="border-t border-white/5 pt-12 text-center text-white/20 text-xs">
-                        © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
+                        © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
                     </div>
                 </div>
             </footer>

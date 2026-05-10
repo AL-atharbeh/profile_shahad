@@ -30,7 +30,7 @@ function useReveal(threshold = 0.1) {
 
 export default function TermsPage() {
     const [lang, setLang] = useState<Lang>("ar");
-    
+
     const heroReveal = useReveal(0.05);
     const contentReveal = useReveal(0.1);
 
@@ -68,7 +68,7 @@ export default function TermsPage() {
 
     return (
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-            
+
             {/* ═══ NAVBAR ═══ */}
             <Navbar lang={lang} setLang={setLang} />
 
@@ -83,7 +83,7 @@ export default function TermsPage() {
                         {lang === "ar" ? "الشروط والأحكام" : "Terms & Conditions"}
                     </h1>
                     <p className={`text-emerald-800/60 font-bold animate-stagger-3 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                        {lang === "ar" ? "آخر تحديث: ٢٦ أبريل ٢٠٢٥" : "Last Updated: April 26, 2025"}
+                        {lang === "ar" ? "آخر تحديث: ٢٦ أبريل ٢٠٢٥" : "Last Updated: April 26, 2026"}
                     </p>
                 </div>
             </section>
@@ -130,7 +130,7 @@ export default function TermsPage() {
                         <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="mx-auto" />
                     </Link>
                     <p className="text-white/20 text-xs text-center border-t border-white/5 pt-10">
-                        © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
+                        © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
                     </p>
                 </div>
             </footer>

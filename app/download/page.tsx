@@ -101,12 +101,12 @@ export default function DownloadPage() {
 
                             {/* Phone Image — complete and edge-to-edge */}
                             <div className={`relative min-h-[500px] lg:min-h-0 overflow-hidden ${heroReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'} ${lang === "ar" ? "lg:order-1" : "lg:order-2"}`}>
-                                <Image 
-                                    src="/images/shahad_phone1.png" 
-                                    alt="Shahd App" 
-                                    fill 
-                                    className="absolute inset-0 w-full h-full object-cover object-top" 
-                                    priority 
+                                <Image
+                                    src="/images/shahad_phone1.png"
+                                    alt="Shahd App"
+                                    fill
+                                    className="absolute inset-0 w-full h-full object-cover object-top"
+                                    priority
                                 />
                             </div>
                         </div>
@@ -218,11 +218,11 @@ export default function DownloadPage() {
                             </button>
                         </div>
                         <div className={`flex-1 relative min-h-[400px] lg:min-h-0 bg-emerald-50/30 ${ctaReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '200ms' }}>
-                            <Image 
-                                src="/images/shahad.png" 
-                                alt="Shahd App" 
-                                fill 
-                                className="object-contain p-8" 
+                            <Image
+                                src="/images/shahad.png"
+                                alt="Shahd App"
+                                fill
+                                className="object-contain p-8"
                             />
                         </div>
                     </div>
@@ -236,7 +236,7 @@ export default function DownloadPage() {
                         <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="mx-auto" />
                     </Link>
                     <p className="text-white/20 text-xs text-center border-t border-white/5 pt-10">
-                        © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
+                        © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
                     </p>
                 </div>
             </footer>

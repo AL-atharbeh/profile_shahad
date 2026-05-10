@@ -79,7 +79,7 @@ export default function FAQPage() {
 
     return (
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
-            
+
             {/* ═══ NAVBAR ═══ */}
             <Navbar lang={lang} setLang={setLang} />
 
@@ -91,8 +91,8 @@ export default function FAQPage() {
                         {lang === "ar" ? "كيف يمكننا مساعدتك؟" : "How Can We Help?"}
                     </h1>
                     <div className={`relative max-w-2xl mx-auto animate-stagger-2 ${heroReveal.isVisible ? '' : 'opacity-0'}`}>
-                        <input 
-                            type="text" 
+                        <input
+                            type="text"
                             placeholder={lang === "ar" ? "ابحث عن سؤالك هنا..." : "Search for answers..."}
                             className="w-full h-18 md:h-22 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 px-10 md:px-14 text-white text-lg focus:outline-none focus:bg-white/20 transition-all shadow-2xl placeholder:text-white/30"
                         />
@@ -109,8 +109,8 @@ export default function FAQPage() {
                     {selectedCategory === null ? (
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                             {categories.map((cat, i) => (
-                                <button 
-                                    key={cat.id} 
+                                <button
+                                    key={cat.id}
                                     onClick={() => setSelectedCategory(cat.id)}
                                     className={`glass-card p-10 rounded-[2.5rem] border border-emerald-50 text-center hover:shadow-elevated hover:-translate-y-2 transition-all duration-700 group ${gridReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
                                     style={{ animationDelay: `${i * 150}ms` }}
@@ -126,14 +126,14 @@ export default function FAQPage() {
                     ) : (
                         <div className="max-w-3xl mx-auto">
                             <button onClick={() => setSelectedCategory(null)} className="mb-10 flex items-center gap-3 text-emerald-600 font-bold hover:gap-4 transition-all">
-                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
                                 {lang === "ar" ? "العودة للتصنيفات" : "Back to Categories"}
                             </button>
-                            
+
                             <div className="space-y-4">
                                 {categories.find(c => c.id === selectedCategory)?.faqs.map((faq, i) => (
                                     <div key={i} className="glass-card rounded-[2rem] border border-emerald-50 overflow-hidden">
-                                        <button 
+                                        <button
                                             onClick={() => setOpenFAQ(openFAQ === i ? null : i)}
                                             className="w-full px-8 py-7 flex items-center justify-between text-right hover:bg-emerald-50/30 transition-all font-bold text-emerald-950 text-xl"
                                         >
@@ -187,7 +187,7 @@ export default function FAQPage() {
                         <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="mx-auto" />
                     </Link>
                     <p className="text-white/20 text-xs text-center border-t border-white/5 pt-10">
-                        © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
+                        © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
                     </p>
                 </div>
             </footer>

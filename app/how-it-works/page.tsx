@@ -119,12 +119,12 @@ export default function HowItWorksPage() {
 
                             {/* Image — complete and edge-to-edge */}
                             <div className="flex-1 relative min-h-[400px] md:min-h-0 order-2 md:order-2 overflow-hidden">
-                                <Image 
-                                    src="/images/shahad.png" 
-                                    alt="Shahd App" 
-                                    fill 
-                                    className="object-cover object-top md:object-right" 
-                                    priority 
+                                <Image
+                                    src="/images/shahad.png"
+                                    alt="Shahd App"
+                                    fill
+                                    className="object-cover object-top md:object-right"
+                                    priority
                                 />
                             </div>
                         </div>
@@ -263,7 +263,7 @@ export default function HowItWorksPage() {
                         <Image src="/images/logo_shahadd.png" alt="شِهد" width={120} height={45} className="mx-auto" priority />
                     </Link>
                     <p className="text-white/30 text-xs text-center border-t border-white/5 pt-10">
-                        © 2025 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
+                        © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
                     </p>
                 </div>
             </footer>
