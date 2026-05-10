@@ -124,7 +124,7 @@ export default function AboutPage() {
                                     src="/images/shahed-pic.png" 
                                     alt="About Shahd" 
                                     fill 
-                                    className="absolute inset-0 w-full h-full object-cover object-center" 
+                                    className="absolute inset-0 w-full h-full object-cover object-top" 
                                     priority 
                                 />
                             </div>
@@ -137,14 +137,14 @@ export default function AboutPage() {
             <section className="py-20 md:py-32 bg-white" ref={storyReveal.ref}>
                 <div className="container mx-auto px-6 max-w-7xl">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div className={`relative aspect-square lg:aspect-auto lg:h-[600px] rounded-[3rem] overflow-hidden ${storyReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
+                        <div className={`relative aspect-[4/5] lg:aspect-auto lg:h-[700px] rounded-[3rem] overflow-hidden shadow-2xl ${storyReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                             <Image 
                                 src="/images/shopshahed.png" 
                                 alt="Our Story" 
                                 fill 
-                                className="object-cover"
+                                className="object-cover object-top"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/50 to-transparent" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-emerald-950/40 via-transparent to-transparent" />
                         </div>
                         <div className={`${storyReveal.isVisible ? 'animate-fade-in-up delay-200' : 'opacity-0'}`}>
                             <h2 className="text-3xl md:text-5xl font-bold text-emerald-950 mb-8">{t.storyTitle[lang]}</h2>
