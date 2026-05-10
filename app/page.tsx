@@ -634,10 +634,17 @@ export default function Home() {
                   {[
                     {
                       title: t.merchantsFeature1, desc: lang === "ar" ? "زد مبيعاتك بشكل كبير" : "Significantly increase your sales",
-                       ].map((item, i) => (
+                    },
+                    {
+                      title: t.merchantsFeature2, desc: lang === "ar" ? "تجربة تسوق سلسة" : "Seamless shopping experience",
+                    },
+                    {
+                      title: t.merchantsFeature3, desc: lang === "ar" ? "دعم فني متكامل" : "Full technical support",
+                    },
+                  ].map((item, i) => (
                     <div key={i} className="bg-white/[0.06] backdrop-blur-sm rounded-2xl p-6 sm:p-7 text-center border border-white/[0.08] hover:bg-white/[0.1] hover:border-white/[0.15] transition-all duration-300 group cursor-pointer">
                       <div className="w-14 h-14 bg-white/[0.08] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 group-hover:bg-white/[0.12] transition-all duration-300">
-                        {item.icon}
+                        <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                       </div>
                       <h3 className="text-lg sm:text-xl font-ibm-plex-arabic font-bold text-white mb-2">{item.title[lang]}</h3>
                       <p className="text-white/50 text-sm font-ibm-plex-arabic font-normal">{item.desc}</p>
@@ -660,28 +667,6 @@ export default function Home() {
 
       {/* ═══ FOOTER ═══ */}
       <Footer lang={lang} />
-
-      {/* ═══ FIXED MOBILE DOWNLOAD ═══ */}
-      <button
-        className={`md:hidden fixed bottom-0 left-0 right-0 mx-4 mb-4 px-6 py-4 rounded-2xl bg-[#0a1f10] text-white text-base font-ibm-plex-arabic font-bold shadow-[0_-4px_30px_rgba(0,0,0,0.15)] transition-all duration-500 z-50 flex items-center justify-center gap-2 cursor-pointer backdrop-blur-lg ${showButton ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
-          }`}
-      >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
-        <span>{lang === "ar" ? "حمل التطبيق" : "Download App"}</span>
-      </button>
-
-    </main>
-  );
-}
-�قوق محفوظة" : "All Rights Reserved"}
-            </p>
-            <div className="flex items-center gap-2 text-emerald-800/30 text-xs font-ibm-plex-arabic">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-              {lang === "ar" ? "جميع المعاملات مشفرة وآمنة" : "All transactions encrypted & secure"}
-            </div>
-          </div>
-        </div>
-      </footer>
 
       {/* ═══ FIXED MOBILE DOWNLOAD ═══ */}
       <button
