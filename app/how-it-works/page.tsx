@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 type Lang = "ar" | "en";
 
@@ -30,7 +31,6 @@ function useReveal(threshold = 0.1) {
 export default function HowItWorksPage() {
     const [lang, setLang] = useState<Lang>("ar");
     const [openQuestion, setOpenQuestion] = useState<number | null>(null);
-    const [navScrolled, setNavScrolled] = useState(false);
 
     // Section reveal refs
     const heroReveal = useReveal(0.05);
@@ -38,12 +38,6 @@ export default function HowItWorksPage() {
     const onlineReveal = useReveal(0.15);
     const faqReveal = useReveal(0.15);
     const ctaReveal = useReveal(0.15);
-
-    useEffect(() => {
-        const handleScroll = () => setNavScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const toggleQuestion = (index: number) => {
         setOpenQuestion(openQuestion === index ? null : index);
@@ -96,29 +90,7 @@ export default function HowItWorksPage() {
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
 
             {/* ═══ NAVBAR ═══ */}
-            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
-                }`}>
-                <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
-                    <Link href="/" className="flex items-center transform transition-transform hover:scale-105 active:scale-95 group">
-                        <div className="relative">
-                            <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="h-9 md:h-11 w-auto object-contain" priority />
-                        </div>
-                    </Link>
-
-                    <div className="flex items-center gap-4">
-                        <Link href="/" className="hidden sm:inline-block text-sm font-bold text-emerald-900 hover:text-emerald-600 transition-colors">
-                            {lang === "ar" ? "الرئيسية" : "Home"}
-                        </Link>
-                        <button
-                            onClick={() => setLang(lang === "ar" ? "en" : "ar")}
-                            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition-all text-sm font-bold text-emerald-800"
-                        >
-                            <span className="text-[10px] opacity-60 font-bold">{lang === "ar" ? "EN" : "ع"}</span>
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
-                        </button>
-                    </div>
-                </div>
-            </header>
+            <Navbar lang={lang} setLang={setLang} />
 
             {/* ═══ HERO SECTION ═══ */}
             <section className="relative w-full pt-28 sm:pt-36 pb-16 px-4 sm:px-6 overflow-hidden" ref={heroReveal.ref}>

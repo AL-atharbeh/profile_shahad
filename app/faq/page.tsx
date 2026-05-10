@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Navbar from "../components/Navbar";
 
 type Lang = "ar" | "en";
 
@@ -37,7 +38,6 @@ interface Category {
 
 export default function FAQPage() {
     const [lang, setLang] = useState<Lang>("ar");
-    const [navScrolled, setNavScrolled] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState<number | null>(null);
     const [openFAQ, setOpenFAQ] = useState<number | null>(null);
 
@@ -45,11 +45,6 @@ export default function FAQPage() {
     const gridReveal = useReveal(0.1);
     const contactReveal = useReveal(0.1);
 
-    useEffect(() => {
-        const handleScroll = () => setNavScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     const categories: Category[] = [
         {
@@ -86,30 +81,7 @@ export default function FAQPage() {
         <main className={`bg-white text-[#0a1f10] min-h-screen font-ibm-plex-arabic ${lang === "ar" ? "rtl" : "ltr"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
             
             {/* ═══ NAVBAR ═══ */}
-            <header className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
-                navScrolled ? 'bg-white/80 backdrop-blur-xl border-b border-emerald-100/50 py-3 shadow-premium' : 'bg-transparent py-5'
-            }`}>
-                <div className="container mx-auto px-6 max-w-7xl flex justify-between items-center">
-                    <Link href="/" className="flex items-center transform transition-transform hover:scale-105 active:scale-95 group">
-                        <Image src="/images/logo_shahadd.png" alt="شِهد" width={110} height={40} className="h-9 md:h-11 w-auto object-contain" priority />
-                    </Link>
-                    
-                    <div className="flex items-center gap-6">
-                        <nav className="hidden lg:flex items-center gap-8">
-                            <Link href="/" className="text-sm font-bold text-emerald-900/60 hover:text-emerald-900 transition-colors">{lang === "ar" ? "الرئيسية" : "Home"}</Link>
-                            <Link href="/how-it-works">{lang === "ar" ? "كيفية الاستخدام" : "How it Works"}</Link>
-                            <Link href="/business">{lang === "ar" ? "للأعمال" : "Business"}</Link>
-                        </nav>
-                        <button
-                            onClick={() => setLang(lang === "ar" ? "en" : "ar")}
-                            className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 transition-all text-sm font-bold text-emerald-800"
-                        >
-                            <span className="text-[10px] opacity-60 font-bold">{lang === "ar" ? "EN" : "ع"}</span>
-                            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                        </button>
-                    </div>
-                </div>
-            </header>
+            <Navbar lang={lang} setLang={setLang} />
 
             {/* ═══ HERO SECTION (Search Style) ═══ */}
             <section className="relative w-full pt-32 sm:pt-48 pb-20 px-6 overflow-hidden min-h-[60vh] flex items-center bg-emerald-950" ref={heroReveal.ref}>
