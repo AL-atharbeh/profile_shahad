@@ -43,7 +43,7 @@ export default function Footer({ lang }: FooterProps) {
                 {lang === "ar" ? "الروابط" : "Links"}
               </h4>
               {[
-                { label: lang === "ar" ? "عن شِهد" : "About", href: "#" },
+                { label: lang === "ar" ? "عن شِهد" : "About", href: "/about" },
                 { label: lang === "ar" ? "كيف يعمل" : "How It Works", href: "/how-it-works" },
                 { label: lang === "ar" ? "للأعمال" : "For Business", href: "/business" },
               ].map((link, i) => (

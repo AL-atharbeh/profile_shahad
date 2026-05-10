@@ -49,10 +49,12 @@ export default function Navbar({ lang, setLang }: NavbarProps) {
     business: { ar: "للأعمال", en: "For Business" },
     businessLogin: { ar: "تسجيل الدخول للأعمال", en: "Business Login" },
     downloadApp: { ar: "حمل التطبيق", en: "Download App" },
+    about: { ar: "عن شِهد", en: "About" },
   };
 
   const navLinks = [
     { label: t.home[lang], href: "/" },
+    { label: t.about[lang], href: "/about" },
     { label: t.howItWorks[lang], href: "/how-it-works" },
     { label: t.business[lang], href: "/business" },
   ];
