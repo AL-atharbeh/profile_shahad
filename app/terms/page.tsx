@@ -113,10 +113,10 @@ export default function TermsPage() {
                     <div className={`mt-24 p-12 rounded-[2.5rem] bg-emerald-950 text-white relative overflow-hidden ${contentReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
                         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-10 -mt-10" />
                         <div className="relative z-10 text-center">
-                            <h3 className="text-2xl font-bold mb-6">{lang === "ar" ? "هل لديك تساؤل قانوني؟" : "Any Legal Questions?"}</h3>
-                            <p className="text-white/60 mb-8 max-w-xl mx-auto">{lang === "ar" ? "فريقنا القانوني مستعد للإجابة على كافة استفساراتكم المتعلقة بسياسات المنصة." : "Our legal team is ready to answer any questions regarding our platform policies."}</p>
-                            <Link href="mailto:legal@shahd.com" className="btn-premium-gold px-12 py-4 rounded-xl font-bold inline-block">
-                                legal@shahd.com
+                            <h3 className="text-2xl font-bold mb-6">{lang === "ar" ? "هل لديك تساؤل؟" : "Any Questions?"}</h3>
+                            <p className="text-white/60 mb-8 max-w-xl mx-auto">{lang === "ar" ? "فريقنا مستعد للإجابة على كافة استفساراتكم المتعلقة بسياسات المنصة." : "Our team is ready to answer any questions regarding our platform policies."}</p>
+                            <Link href="mailto:support@shahedapp.com" className="btn-premium-gold px-12 py-4 rounded-xl font-bold inline-block">
+                                support@shahedapp.com
                             </Link>
                         </div>
                     </div>
