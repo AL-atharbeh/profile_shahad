@@ -16,16 +16,16 @@ export default function Footer({ lang }: FooterProps) {
 
       <div className="container mx-auto px-4 sm:px-6 max-w-6xl relative z-10">
         {/* Top section */}
-        <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start gap-10 mb-12">
           {/* Brand */}
-          <div className="flex-1 max-w-sm text-center md:text-start">
+          <div className="flex-1 max-w-sm">
             <Link href="/" className="inline-block">
               <Image
                 src="/images/logo_shahadd.png"
                 alt="شِهد"
                 width={100}
                 height={35}
-                className="h-9 w-auto mb-4 object-contain mx-auto md:mx-0"
+                className="h-9 w-auto mb-4 object-contain"
                 quality={100}
               />
             </Link>
@@ -36,8 +36,8 @@ export default function Footer({ lang }: FooterProps) {
             </p>
           </div>
 
-          {/* Links Groups */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-x-16 gap-y-8 flex-1">
+          {/* Links */}
+          <div className="flex flex-wrap gap-x-12 gap-y-6">
             <div className="flex flex-col gap-3">
               <h4 className="font-ibm-plex-arabic font-bold text-[#0a1f10] text-sm mb-1">
                 {lang === "ar" ? "الروابط" : "Links"}
@@ -75,11 +75,25 @@ export default function Footer({ lang }: FooterProps) {
                 </Link>
               ))}
             </div>
+            <div className="flex flex-col gap-3">
+              <h4 className="font-ibm-plex-arabic font-bold text-[#0a1f10] text-sm mb-1">
+                {lang === "ar" ? "تواصل معنا" : "Contact Us"}
+              </h4>
+              <a href="tel:+962776719225" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer" dir="ltr">
+                +962 7 7671 9225
+              </a>
+              <a href="mailto:info@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer">
+                info@shahedapp.com
+              </a>
+              <a href="mailto:support@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer">
+                support@shahedapp.com
+              </a>
+            </div>
           </div>
 
           {/* Social */}
-          <div className="flex flex-col items-center md:items-end">
-            <h4 className="font-ibm-plex-arabic font-bold text-[#0a1f10] text-sm mb-4">
+          <div className="flex flex-col items-start">
+            <h4 className="font-ibm-plex-arabic font-bold text-[#0a1f10] text-sm mb-3">
               {lang === "ar" ? "تابعنا" : "Follow Us"}
             </h4>
             <div className="flex gap-3">
@@ -122,27 +136,6 @@ export default function Footer({ lang }: FooterProps) {
                 </a>
               ))}
             </div>
-          </div>
-        </div>
-
-        {/* Contact Info Horizontal Row */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-x-12 gap-y-4 py-8 mb-8 border-y border-emerald-50/50">
-          <div className="flex items-center gap-3">
-            <span className="text-[#0a1f10] font-ibm-plex-arabic font-bold text-sm">{lang === "ar" ? "تواصل معنا:" : "Contact Us:"}</span>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-4">
-            <a href="tel:+962776719225" className="flex items-center gap-2 text-emerald-800/60 hover:text-emerald-700 transition-colors text-base font-ibm-plex-arabic font-bold cursor-pointer" dir="ltr">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              +962 7 7671 9225
-            </a>
-            <a href="mailto:info@shahedapp.com" className="flex items-center gap-2 text-emerald-800/60 hover:text-emerald-700 transition-colors text-base font-ibm-plex-arabic font-bold cursor-pointer">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              info@shahedapp.com
-            </a>
-            <a href="mailto:support@shahedapp.com" className="flex items-center gap-2 text-emerald-800/60 hover:text-emerald-700 transition-colors text-base font-ibm-plex-arabic font-bold cursor-pointer">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-              support@shahedapp.com
-            </a>
           </div>
         </div>
 
