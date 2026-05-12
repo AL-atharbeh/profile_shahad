@@ -82,10 +82,10 @@ export default function Footer({ lang }: FooterProps) {
               <a href="tel:+962776719225" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer" dir="ltr">
                 +962 7 7671 9225
               </a>
-              <a href="mailto:info@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer">
+              <a href="mailto:info@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer" dir="ltr">
                 info@shahedapp.com
               </a>
-              <a href="mailto:support@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer">
+              <a href="mailto:support@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer" dir="ltr">
                 support@shahedapp.com
               </a>
             </div>
@@ -149,8 +149,8 @@ export default function Footer({ lang }: FooterProps) {
               © 2026 شِهد — {lang === "ar" ? "جميع الحقوق محفوظة" : "All Rights Reserved"}
             </p>
             <p className="text-emerald-800/30 text-[10px] font-ibm-plex-arabic">
-              {lang === "ar" 
-                ? "أحد مشاريع شركة حكمة البيانات للتقنية (Hikmat Al-Bayanat)" 
+              {lang === "ar"
+                ? "أحد مشاريع شركة حكمة البيانات للتقنية (Hikmat Al-Bayanat)"
                 : "A project by Hikmat Al-Bayanat Technology Company"}
             </p>
           </div>
