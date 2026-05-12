@@ -79,7 +79,7 @@ export default function Footer({ lang }: FooterProps) {
               <h4 className="font-ibm-plex-arabic font-bold text-[#0a1f10] text-sm mb-1">
                 {lang === "ar" ? "تواصل معنا" : "Contact Us"}
               </h4>
-              <a href="tel:+962776719225" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer dir-ltr">
+              <a href="tel:+962776719225" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer" dir="ltr">
                 +962 7 7671 9225
               </a>
               <a href="mailto:info@shahedapp.com" className="text-emerald-800/50 hover:text-emerald-700 transition-colors text-sm font-ibm-plex-arabic cursor-pointer">

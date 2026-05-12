@@ -167,7 +167,7 @@ export default function FAQPage() {
                                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                             </div>
                             <span className="text-2xl font-bold text-emerald-950 mb-2">{lang === "ar" ? "اتصل بنا" : "Call Us"}</span>
-                            <span className="text-emerald-800/60 font-bold">+962 7 7671 9225</span>
+                            <span className="text-emerald-800/60 font-bold" dir="ltr">+962 7 7671 9225</span>
                         </a>
                         <a href="mailto:support@shahedapp.com" className={`p-10 rounded-[2.5rem] bg-white border border-emerald-100 shadow-premium flex flex-col items-center group hover:-translate-y-2 transition-all duration-700 ${contactReveal.isVisible ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '400ms' }}>
                             <div className="w-16 h-16 rounded-2xl bg-emerald-600 text-white flex items-center justify-center mb-6 shadow-glow group-hover:scale-110 transition-transform">
